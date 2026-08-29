@@ -1,1 +1,11 @@
+/**
+ * Feuille de style principale.
+ *
+ * Charge Tailwind puis les styles personnalisés
+ * du portfolio.
+ */
+
 @import "tailwindcss";
+
+@import './base.css';
+@import './portefolio.css';

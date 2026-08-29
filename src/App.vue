@@ -1,18 +1,14 @@
-<template>
-  <div class="min-h-screen bg-slate-900 text-slate-100 font-sans">
-    
-    <!-- Notre composant Navbar global -->
-    <Navbar />
-
-    <!-- Zone d'affichage dynamique de nos pages (HomeView) -->
-    <div class="max-w-6xl mx-auto px-4">
-      <RouterView />
-    </div>
-
-  </div>
-</template>
-
 <script setup>
+import NavigationBar from '@/components/common/NavigationBar.vue'
 import { RouterView } from 'vue-router'
-import Navbar from './components/Navbar.vue'
 </script>
+
+<template>
+  <NavigationBar />
+
+  <RouterView v-slot="{ Component }">
+    <Transition name="page" mode="out-in">
+      <component :is="Component" />
+    </Transition>
+  </RouterView>
+</template>
