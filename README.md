@@ -1,34 +1,44 @@
-# 🎨 Portfolio Interactif (Vue.js)
+# portefolio-vue
 
-[![License: MIT](https://shields.io)](https://opensource.org)
+This template should help get you started developing with Vue 3 in Vite.
 
-Ce dépôt contient le code source de mon portfolio professionnel en ligne. L'objectif de ce projet est de concevoir une interface utilisateur fluide, réactive et hautement performante en utilisant les concepts modernes de Vue 3.
+## Recommended IDE Setup
 
-💻 **[Accéder au site en ligne (Lien GitHub Pages ou Vercel)](https://github.io)**
+[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
 
-## ⚡ Fonctionnalités
-- **Architecture par composants :** Organisation modulaire et réutilisable du code.
-- **Responsive Design :** Interface entièrement optimisée pour les mobiles, tablettes et ordinateurs.
-- **Gestion d'état :** Interaction dynamique (ex: système de filtrage des projets, bascule mode sombre/clair).
+## Recommended Browser Setup
 
-## 🛠️ Stack Technique
-- **Framework :** Vue.js 3 (Composition API)
-- **Outil de Build :** Vite
-- **Styles :** Tailwind CSS
-- **Routage :** Vue Router
+- Chromium-based browsers (Chrome, Edge, Brave, etc.):
+  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
+  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
+- Firefox:
+  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
+  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
 
-## 💻 Installation Locale
+## Customize configuration
 
-1. Cloner le projet :
-   ```bash
-   git clone https://github.com
-   cd portfolio-vue
-   ```
-2. Installer les dépendances (via Node.js) :
-   ```bash
-   npm install
-   ```
-3. Lancer le serveur de développement :
-   ```bash
-   npm run dev
-   ```
+See [Vite Configuration Reference](https://vite.dev/config/).
+
+## Project Setup
+
+```sh
+npm install
+```
+
+### Compile and Hot-Reload for Development
+
+```sh
+npm run dev
+```
+
+### Compile and Minify for Production
+
+```sh
+npm run build
+```
+
+### Lint with [ESLint](https://eslint.org/)
+
+```sh
+npm run lint
+```
