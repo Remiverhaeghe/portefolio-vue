@@ -37,9 +37,6 @@ const {
           v-for="(category, categoryIndex) in skillCategories"
           :key="category.title"
           class="skills_category"
-          :class="{
-            skills_category_visible: skillsVisible,
-          }"
           :style="{
             '--category-delay': `${categoryIndex * 150}ms`,
           }"
@@ -63,7 +60,7 @@ const {
           <div class="skills_list">
 
             <div
-              v-for="(skill, skillIndex) in category.skills"
+              v-for="(skill, index) in category.skills"
               :key="skill.name"
               class="skill"
             >
@@ -92,7 +89,7 @@ const {
                       ? `${skill.level * 20}%`
                       : '0%',
                     transitionDelay: skillsVisible
-                      ? `${categoryIndex * 150 + skillIndex * 120}ms`
+                      ? `${categoryIndex * 150 + index * 100}ms`
                       : '0ms',
                   }"
                 ></div>

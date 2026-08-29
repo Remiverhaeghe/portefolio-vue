@@ -2,6 +2,7 @@
 import { career } from '@/data/career.js'
 import { sections } from '@/data/sections.js'
 import SectionTitle from '@/components/common/SectionTitle.vue'
+import { useScrollReveal } from '@/composables/useScrollReveal.js'
 
 /**
  * Section présentant l'objectif professionnel.
@@ -12,10 +13,20 @@ defineProps({
     required: true,
   },
 })
+
+const {
+  element: careerSection,
+  visible: careerVisible,
+} = useScrollReveal()
 </script>
 
 <template>
-  <section id="objectif" class="career">
+  <section
+    ref="careerSection"
+    :id="sections.career.anchor"
+    class="career"
+    :class="{ section_visible: careerVisible }"
+  >
     <div class="career_container">
 
       <!-- En-tête de section -->
