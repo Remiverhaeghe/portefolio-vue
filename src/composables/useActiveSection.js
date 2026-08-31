@@ -1,71 +1,75 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 
 /**
- * Gère la section actuellement active dans la navigation.
+ * Synchronise la navigation avec la section visible.
  */
 export function useActiveSection(sectionIds = []) {
   const activeSection = ref('accueil')
 
-  let elements = []
   let ticking = false
 
+  // Récupère les sections présentes dans la page.
+  const getElements = () => {
+    return sectionIds
+      .map((id) => document.getElementById(id))
+      .filter(Boolean)
+  }
+
+  // Détermine la section située sous la navbar.
   const updateActiveSection = () => {
+    const elements = getElements()
+
     if (!elements.length) {
       ticking = false
       return
     }
 
+    const navbar = document.querySelector('.navbar')
+    const navbarHeight = navbar?.offsetHeight ?? 0
+
+    const reference = navbarHeight + 30
+
+    // En bas de page, la dernière section devient active.
     const scrollY = window.scrollY
-    const windowHeight = window.innerHeight
+    const viewportHeight = window.innerHeight
     const documentHeight = document.documentElement.scrollHeight
 
-    /*
-     * Si on est arrivé tout en bas de la page,
-     * la dernière section devient automatiquement active.
-     */
-    if (scrollY + windowHeight >= documentHeight - 10) {
-      activeSection.value =
-        elements[elements.length - 1].id
-
+    if (scrollY + viewportHeight >= documentHeight - 10) {
+      activeSection.value = elements[elements.length - 1].id
       ticking = false
       return
     }
 
-    /*
-     * Ligne virtuelle utilisée pour déterminer
-     * la section actuellement traversée.
-     */
-    const referencePosition = scrollY + 180
-
-    let currentSection = elements[0].id
+    let current = elements[0].id
 
     for (const element of elements) {
-      if (element.offsetTop <= referencePosition) {
-        currentSection = element.id
+      if (element.getBoundingClientRect().top <= reference) {
+        current = element.id
       }
     }
 
-    activeSection.value = currentSection
+    activeSection.value = current
 
     ticking = false
   }
 
+  // Évite de multiplier les calculs pendant le scroll.
   const handleScroll = () => {
-    if (!ticking) {
-      window.requestAnimationFrame(updateActiveSection)
-      ticking = true
+    if (ticking) {
+      return
     }
+
+    ticking = true
+
+    window.requestAnimationFrame(updateActiveSection)
   }
 
+  // Recalcule la section après un redimensionnement.
   const handleResize = () => {
     updateActiveSection()
   }
 
   onMounted(() => {
-    elements = sectionIds
-      .map((id) => document.getElementById(id))
-      .filter(Boolean)
-
     updateActiveSection()
 
     window.addEventListener('scroll', handleScroll, {

@@ -1,11 +1,9 @@
 <script setup>
-defineProps({
-  number: {
-    type: Number,
-    required: false,
-    default: null,
-  },
+/**
+ * Titre commun des sections du portfolio.
+ */
 
+defineProps({
   title: {
     type: String,
     required: true,

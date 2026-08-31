@@ -1,11 +1,11 @@
 <script setup>
 import HeroSection from '@/components/home/HeroSection.vue'
-import ProfileSummarySection from '@/components/home/ProfileSummarySection.vue'
+import ProfileSection from '@/components/home/ProfileSection.vue'
 import AboutSection from '@/components/home/AboutSection.vue'
 import ExperienceSection from '@/components/home/ExperienceSection.vue'
 import SkillsSection from '@/components/home/SkillsSection.vue'
 import ProjectsSection from '@/components/home/ProjectsSection.vue'
-import CareerGoalSection from '@/components/home/CareerGoalSection.vue'
+import CareerSection from '@/components/home/CareerSection.vue'
 import ContactSection from '@/components/home/ContactSection.vue'
 
 /**
@@ -15,12 +15,12 @@ import ContactSection from '@/components/home/ContactSection.vue'
  * l'ordre d'affichage des sections.
  */
 const sections = [
-  ProfileSummarySection,
+  ProfileSection,
   AboutSection,
   ExperienceSection,
   SkillsSection,
   ProjectsSection,
-  CareerGoalSection,
+  CareerSection,
   ContactSection,
 ]
 </script>
@@ -35,7 +35,6 @@ const sections = [
       v-for="(section, index) in sections"
       :key="index"
       :is="section"
-      :number="index + 1"
     />
   </main>
 </template>

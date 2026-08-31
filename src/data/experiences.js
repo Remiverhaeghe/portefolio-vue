@@ -4,10 +4,13 @@ import { Experience } from '@/models/Experience.js'
  * Parcours professionnel présenté dans le portfolio.
  */
 export const experiences = [
+
   new Experience({
     // Informations principales.
     title: 'Développeur Java',
     company: 'DSD System',
+    logo: '/images/companies/DSDSystem.png',
+    location: 'Lille (59)',
     period: '2024 - Aujourd’hui',
 
     // Contexte professionnel.
@@ -48,10 +51,13 @@ export const experiences = [
     ],
   }),
 
+
   new Experience({
     // Informations principales.
     title: 'Maintenance, Production, Planification, Projets',
     company: 'SNCF',
+    logo: '/images/companies/SNCF.png',
+    location: 'Technicentre Atlantique · Chatillon (92)',
     period: '2010 - 2021',
 
     // Contexte professionnel.
@@ -88,4 +94,5 @@ export const experiences = [
       'Amélioration continue',
     ],
   }),
+
 ]

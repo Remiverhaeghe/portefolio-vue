@@ -1,0 +1,164 @@
+/**
+ * Animations communes du portfolio.
+ *
+ * Contient les animations réutilisables
+ * par plusieurs composants.
+ */
+
+
+/* =========================================================
+   APPARITION VERTICALE
+   ========================================================= */
+
+@keyframes fade_up {
+
+  from {
+    opacity: 0;
+
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+
+}
+
+
+/* =========================================================
+   APPARITION HORIZONTALE
+   ========================================================= */
+
+@keyframes fade_right {
+
+  from {
+    opacity: 0;
+
+    transform: translateX(-24px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateX(0);
+  }
+
+}
+
+
+/* =========================================================
+   APPARITION DEPUIS LA DROITE
+   ========================================================= */
+
+@keyframes fade_left {
+
+  from {
+    opacity: 0;
+
+    transform: translateX(24px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateX(0);
+  }
+
+}
+
+
+/* =========================================================
+   APPARITION SIMPLE
+   ========================================================= */
+
+@keyframes fade_in {
+
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+
+}
+
+
+/* =========================================================
+   CLASSES D'ANIMATION
+   ========================================================= */
+
+.animate_fade_up {
+  animation:
+    fade_up 0.7s ease-out both;
+}
+
+
+.animate_fade_right {
+  animation:
+    fade_right 0.7s ease-out both;
+}
+
+
+.animate_fade_left {
+  animation:
+    fade_left 0.7s ease-out both;
+}
+
+
+.animate_fade_in {
+  animation:
+    fade_in 0.7s ease-out both;
+}
+
+
+/* =========================================================
+   DÉLAIS
+   ========================================================= */
+
+.animate_delay_1 {
+  animation-delay: 0.1s;
+}
+
+
+.animate_delay_2 {
+  animation-delay: 0.2s;
+}
+
+
+.animate_delay_3 {
+  animation-delay: 0.3s;
+}
+
+
+.animate_delay_4 {
+  animation-delay: 0.4s;
+}
+
+
+.animate_delay_5 {
+  animation-delay: 0.5s;
+}
+
+
+/* =========================================================
+   ACCESSIBILITÉ
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+
+    animation-iteration-count: 1 !important;
+
+    transition-duration: 0.01ms !important;
+
+    scroll-behavior: auto !important;
+  }
+
+}

@@ -1,0 +1,298 @@
+/**
+ * Section Profil — En un coup d'œil.
+ *
+ * Présente les principales caractéristiques du profil
+ * sous forme d'une carte synthétique.
+ */
+
+
+/* =========================================================
+   SECTION
+   ========================================================= */
+
+.profile_summary {
+  padding-block: 6rem;
+
+  background-color: var(--color-bg);
+
+  transition:
+    background-color var(--transition-slow);
+}
+
+
+/* =========================================================
+   CARTE PRINCIPALE
+   ========================================================= */
+
+.profile_summary_card {
+  display: grid;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  max-width: 72rem;
+
+  margin: 2.5rem auto 0;
+
+  padding: 1.5rem;
+
+  border: 1px solid var(--color-border);
+
+  border-radius: var(--radius-large);
+
+  background-color: var(--color-card);
+
+  transition:
+    border-color var(--transition-normal),
+    box-shadow var(--transition-normal);
+}
+
+
+.profile_summary_card:hover {
+  border-color: var(--color-accent);
+
+  box-shadow:
+    0 12px 30px var(--color-shadow);
+}
+
+
+/* =========================================================
+   ÉLÉMENT
+   ========================================================= */
+
+.profile_summary_item {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 1rem;
+
+  min-width: 0;
+
+  padding: 1.5rem;
+}
+
+
+/* =========================================================
+   SÉPARATEURS
+   ========================================================= */
+
+.profile_summary_item + .profile_summary_item {
+  border-left: 1px solid var(--color-border-light);
+}
+
+
+/* =========================================================
+   ICÔNE
+   ========================================================= */
+
+.profile_summary_icon {
+  flex: 0 0 auto;
+
+  width: 3rem;
+  height: 3rem;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--color-border);
+
+  border-radius: 0.7rem;
+
+  background-color: var(--color-bg-secondary);
+
+  color: var(--color-accent);
+
+  transition:
+    border-color var(--transition-normal),
+    background-color var(--transition-normal),
+    transform var(--transition-normal);
+}
+
+
+.profile_summary_item:hover .profile_summary_icon {
+  border-color: var(--color-accent);
+
+  background-color: var(--color-bg);
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   CONTENU
+   ========================================================= */
+
+.profile_summary_content {
+  min-width: 0;
+}
+
+
+/* =========================================================
+   LIBELLÉ
+   ========================================================= */
+
+.profile_summary_label {
+  margin: 0 0 0.45rem;
+
+  font-size: 0.68rem;
+
+  font-weight: 700;
+
+  line-height: 1.4;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.1em;
+
+  color: var(--color-text-muted);
+}
+
+
+/* =========================================================
+   VALEUR
+   ========================================================= */
+
+.profile_summary_value {
+  margin: 0;
+
+  font-size: 1rem;
+
+  font-weight: 650;
+
+  line-height: 1.4;
+
+  color: var(--color-text);
+}
+
+
+/* =========================================================
+   SURVOL DE L'ÉLÉMENT
+   ========================================================= */
+
+.profile_summary_item {
+  transition:
+    background-color var(--transition-fast);
+}
+
+
+.profile_summary_item:hover {
+  background-color: var(--color-bg-secondary);
+}
+
+
+/* =========================================================
+   PREMIER ÉLÉMENT
+   ========================================================= */
+
+.profile_summary_item:first-child {
+  border-radius: 0.6rem 0 0 0.6rem;
+}
+
+
+/* =========================================================
+   DERNIER ÉLÉMENT
+   ========================================================= */
+
+.profile_summary_item:last-child {
+  border-radius: 0 0.6rem 0.6rem 0;
+}
+
+
+/* =========================================================
+   TABLETTE
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+  .profile_summary_card {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+
+  .profile_summary_item:nth-child(3) {
+    border-left: none;
+
+    border-top: 1px solid var(--color-border-light);
+  }
+
+
+  .profile_summary_item:nth-child(4) {
+    border-top: 1px solid var(--color-border-light);
+  }
+
+
+  .profile_summary_item:nth-child(3),
+  .profile_summary_item:nth-child(4) {
+    border-radius: 0;
+  }
+
+
+  .profile_summary_item:nth-child(4) {
+    border-radius: 0 0.6rem 0.6rem 0;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 640px) {
+
+  .profile_summary {
+    padding-block: 4rem;
+  }
+
+
+  .profile_summary_card {
+    grid-template-columns: 1fr;
+
+    margin-top: 2rem;
+
+    padding: 0.75rem;
+  }
+
+
+  .profile_summary_item {
+    padding: 1.25rem;
+
+    border-left: none !important;
+
+    border-top: 1px solid var(--color-border-light);
+  }
+
+
+  .profile_summary_item:first-child {
+    border-top: none;
+  }
+
+
+  .profile_summary_item:first-child,
+  .profile_summary_item:last-child,
+  .profile_summary_item:nth-child(3),
+  .profile_summary_item:nth-child(4) {
+    border-radius: 0;
+  }
+
+
+  .profile_summary_item:last-child {
+    border-radius: 0 0 0.6rem 0.6rem;
+  }
+
+
+  .profile_summary_icon {
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+
+
+  .profile_summary_value {
+    font-size: 0.95rem;
+  }
+
+}

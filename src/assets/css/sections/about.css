@@ -1,0 +1,66 @@
+/**
+ * Section À propos.
+ *
+ * Présente le profil et le parcours professionnel.
+ */
+
+
+/* =========================================================
+   SECTION
+   ========================================================= */
+
+.about {
+  padding-block: 6rem;
+
+  background-color: var(--color-bg);
+
+  transition:
+    background-color var(--transition-slow);
+}
+
+
+/* =========================================================
+   CONTENU
+   ========================================================= */
+
+.about_content {
+  max-width: 58rem;
+}
+
+
+/* =========================================================
+   PARAGRAPHES
+   ========================================================= */
+
+.about_paragraph {
+  max-width: 52rem;
+
+  margin: 0 0 1.25rem;
+
+  font-size: 1.05rem;
+
+  line-height: 1.85;
+
+  color: var(--color-text-secondary);
+}
+
+.about_paragraph:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 640px) {
+
+  .about {
+    padding-block: 4rem;
+  }
+
+  .about_paragraph {
+    font-size: 1rem;
+  }
+
+}

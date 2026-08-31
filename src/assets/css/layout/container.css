@@ -1,0 +1,21 @@
+/**
+ * Conteneur principal du portfolio.
+ *
+ * Centralise la largeur et le centrage
+ * du contenu de l'interface.
+ */
+
+
+/* =========================================================
+   CONTENEUR PRINCIPAL
+   ========================================================= */
+
+.container {
+  width: 100%;
+
+  max-width: var(--content-width);
+
+  margin-inline: auto;
+
+  padding-inline: var(--content-padding);
+}

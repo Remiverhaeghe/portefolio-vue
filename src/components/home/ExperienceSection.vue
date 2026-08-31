@@ -2,16 +2,13 @@
 import { experiences } from '@/data/experiences.js'
 import { sections } from '@/data/sections.js'
 import SectionTitle from '@/components/common/SectionTitle.vue'
+import AppIcon from '@/components/common/AppIcon.vue'
 import { useScrollReveal } from '@/composables/useScrollReveal.js'
 
-defineProps({
-  number: {
-    type: Number,
-    required: true,
-  },
-})
-
-const { element: experienceSection, visible: experienceVisible } = useScrollReveal()
+const {
+  element: experienceSection,
+  visible: experienceVisible,
+} = useScrollReveal()
 </script>
 
 <template>
@@ -21,17 +18,28 @@ const { element: experienceSection, visible: experienceVisible } = useScrollReve
     class="experience"
     :class="{ section_visible: experienceVisible }"
   >
-    <div class="experience_container">
-      <!-- En-tête -->
-      <SectionTitle :number="number" :title="sections.experience.title" />
+    <div class="container">
+
+      <!-- =================================================
+           EN-TÊTE
+           ================================================= -->
+
+      <SectionTitle
+        :title="sections.experience.title"
+      />
 
       <p class="experience_intro">
-        Mon évolution professionnelle à travers le développement logiciel, les applications métier
-        et les environnements industriels.
+        Mon évolution professionnelle à travers le développement
+        logiciel, les applications métier et les environnements industriels.
       </p>
 
-      <!-- Timeline -->
+
+      <!-- =================================================
+           TIMELINE
+           ================================================= -->
+
       <div class="experience_timeline">
+
         <article
           v-for="(experience, index) in experiences"
           :key="`${experience.company}-${experience.title}`"
@@ -43,62 +51,211 @@ const { element: experienceSection, visible: experienceVisible } = useScrollReve
             '--experience-delay': `${index * 180}ms`,
           }"
         >
-          <!-- Point sur la timeline -->
-          <div class="experience_marker">
-            <span></span>
-          </div>
 
-          <!-- Période -->
+          <!-- -------------------------------------------------
+               DATE
+               ------------------------------------------------- -->
+
           <div class="experience_date">
             {{ experience.period }}
           </div>
 
-          <!-- Contenu -->
-          <div class="experience_card">
-            <div class="experience_header">
-              <div class="experience_identity">
-                <p class="experience_company">
-                  {{ experience.company }}
-                </p>
 
-                <h3 class="experience_title">
-                  {{ experience.title }}
-                </h3>
+          <!-- -------------------------------------------------
+               POINT TIMELINE
+               ------------------------------------------------- -->
+
+          <div class="experience_marker">
+            <span></span>
+          </div>
+
+
+          <!-- -------------------------------------------------
+               CARTE
+               ------------------------------------------------- -->
+
+          <div class="experience_card">
+
+            <!-- =================================================
+                 EN-TÊTE DE L'EXPÉRIENCE
+                 ================================================= -->
+
+            <div class="experience_header">
+
+              <!-- -------------------------------------------------
+                   ENTREPRISE
+                   ------------------------------------------------- -->
+
+              <div class="experience_company">
+
+                <!-- Logo -->
+
+                <div
+                  v-if="experience.logo"
+                  class="experience_company_logo"
+                >
+                  <img
+                    :src="experience.logo"
+                    :alt="`Logo ${experience.company}`"
+                  />
+                </div>
+
+
+                <!-- Informations entreprise -->
+
+                <div class="experience_company_info">
+
+                  <span class="experience_company_name">
+                    {{ experience.company }}
+                  </span>
+
+                  <span
+                    v-if="experience.location"
+                    class="experience_location"
+                  >
+                    <AppIcon
+                      name="location"
+                      :size="15"
+                    />
+
+                    <span>
+                      {{ experience.location }}
+                    </span>
+                  </span>
+
+                </div>
+
               </div>
+
+
+              <!-- -------------------------------------------------
+                   POSTE
+                   ------------------------------------------------- -->
+
+              <h3 class="experience_title">
+                {{ experience.title }}
+              </h3>
+
+
+              <!-- -------------------------------------------------
+                   DESCRIPTION
+                   ------------------------------------------------- -->
+
+              <p
+                v-if="experience.description"
+                class="experience_description"
+              >
+                {{ experience.description }}
+              </p>
+
             </div>
 
-            <!-- Description -->
-            <p v-if="experience.description" class="experience_description">
-              {{ experience.description }}
-            </p>
 
-            <!-- Responsabilités -->
-            <div v-if="experience.responsibilities?.length" class="experience_block">
-              <h4 class="experience_block_title">Responsabilités</h4>
+            <!-- =================================================
+                 RESPONSABILITÉS
+                 ================================================= -->
+
+            <div
+              v-if="experience.responsibilities?.length"
+              class="experience_block"
+            >
+
+              <h4 class="experience_block_title">
+
+                <span class="experience_block_icon">
+                  <AppIcon
+                    name="user"
+                    :size="20"
+                  />
+                </span>
+
+                <span>
+                  Responsabilités
+                </span>
+
+              </h4>
+
 
               <ul class="experience_list_items">
-                <li v-for="responsibility in experience.responsibilities" :key="responsibility">
+
+                <li
+                  v-for="responsibility in experience.responsibilities"
+                  :key="responsibility"
+                >
                   {{ responsibility }}
                 </li>
+
               </ul>
+
             </div>
 
-            <!-- Réalisations -->
-            <div v-if="experience.hasAchievements()" class="experience_block">
-              <h4 class="experience_block_title">Réalisations</h4>
+
+            <!-- =================================================
+                 RÉALISATIONS
+                 ================================================= -->
+
+            <div
+              v-if="experience.hasAchievements()"
+              class="experience_block"
+            >
+
+              <h4 class="experience_block_title">
+
+                <span class="experience_block_icon">
+                  <AppIcon
+                    name="star"
+                    :size="20"
+                  />
+                </span>
+
+                <span>
+                  Réalisations
+                </span>
+
+              </h4>
+
 
               <ul class="experience_list_items">
-                <li v-for="achievement in experience.achievements" :key="achievement">
+
+                <li
+                  v-for="achievement in experience.achievements"
+                  :key="achievement"
+                >
                   {{ achievement }}
                 </li>
+
               </ul>
+
             </div>
 
-            <!-- Technologies -->
-            <div v-if="experience.technologies?.length" class="experience_block">
-              <h4 class="experience_block_title">Technologies</h4>
+
+            <!-- =================================================
+                 TECHNOLOGIES
+                 ================================================= -->
+
+            <div
+              v-if="experience.technologies?.length"
+              class="experience_block experience_technologies_block"
+            >
+
+              <h4 class="experience_block_title">
+
+                <span class="experience_block_icon">
+                  <AppIcon
+                    name="layers"
+                    :size="20"
+                  />
+                </span>
+
+                <span>
+                  Environnement technique
+                </span>
+
+              </h4>
+
 
               <div class="experience_technologies">
+
                 <span
                   v-for="technology in experience.technologies"
                   :key="technology"
@@ -106,11 +263,17 @@ const { element: experienceSection, visible: experienceVisible } = useScrollReve
                 >
                   {{ technology }}
                 </span>
+
               </div>
+
             </div>
+
           </div>
+
         </article>
+
       </div>
+
     </div>
   </section>
 </template>

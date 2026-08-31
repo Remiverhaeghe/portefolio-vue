@@ -1,8 +1,9 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 
 /**
- * Gère l'apparition et la disparition d'un élément
- * lors du défilement.
+ * Gère l'apparition d'un élément lors du défilement.
+ *
+ * L'élément reste visible une fois découvert.
  */
 export function useScrollReveal() {
   const element = ref(null)
@@ -13,7 +14,12 @@ export function useScrollReveal() {
   onMounted(() => {
     observer = new IntersectionObserver(
       ([entry]) => {
-        visible.value = entry.isIntersecting
+        if (entry.isIntersecting) {
+          visible.value = true
+
+          // L'animation n'a besoin d'être déclenchée qu'une fois.
+          observer?.disconnect()
+        }
       },
       {
         threshold: 0.15,

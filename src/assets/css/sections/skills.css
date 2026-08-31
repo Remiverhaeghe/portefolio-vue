@@ -1,0 +1,594 @@
+/**
+ * Section Compétences.
+ *
+ * Présente les compétences techniques regroupées
+ * par domaine avec leur niveau de maîtrise.
+ */
+
+
+/* =========================================================
+   SECTION
+   ========================================================= */
+
+.skills {
+  padding-block: 6rem;
+
+  background-color: var(--color-bg);
+
+  transition:
+    background-color var(--transition-slow);
+}
+
+
+/* =========================================================
+   INTRODUCTION
+   ========================================================= */
+
+.skills_intro {
+  max-width: 52rem;
+
+  margin: -1.25rem 0 3rem;
+
+  font-size: 1rem;
+
+  line-height: 1.8;
+
+  color: var(--color-text-secondary);
+}
+
+
+/* =========================================================
+   CATÉGORIES
+   ========================================================= */
+
+.skills_categories {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 1.25rem;
+
+  max-width: 64rem;
+
+  margin-inline: auto;
+}
+
+
+/* =========================================================
+   CARTE
+   ========================================================= */
+
+.skills_category {
+  position: relative;
+
+  overflow: hidden;
+
+  padding: 2rem;
+
+  border: 1px solid var(--color-border);
+
+  border-radius: var(--radius-large);
+
+  background-color: var(--color-card);
+
+  opacity: 0;
+
+  transform: translateY(20px);
+
+  transition:
+    opacity 0.6s ease var(--category-delay),
+    transform 0.6s ease var(--category-delay),
+    border-color var(--transition-normal),
+    box-shadow var(--transition-normal);
+}
+
+
+/* =========================================================
+   APPARITION
+   ========================================================= */
+
+.section_visible .skills_category {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   INDICATEUR LATÉRAL
+   ========================================================= */
+
+.skills_category::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 3px;
+  height: 100%;
+
+  background-color: var(--color-accent);
+
+  transform: scaleY(0);
+
+  transform-origin: bottom;
+
+  transition:
+    transform 0.45s ease;
+}
+
+
+/* =========================================================
+   SURVOL
+   ========================================================= */
+
+.skills_category:hover {
+  transform: translateY(-3px);
+
+  border-color: var(--color-accent);
+
+  box-shadow:
+    0 12px 30px var(--color-shadow);
+}
+
+
+.skills_category:hover::before {
+  transform: scaleY(1);
+}
+
+
+/* =========================================================
+   EN-TÊTE
+   ========================================================= */
+
+.skills_category_header {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 1rem;
+
+  margin-bottom: 1.75rem;
+}
+
+
+/* =========================================================
+   ICÔNE DE CATÉGORIE
+   ========================================================= */
+
+.skills_category_icon {
+  flex: 0 0 auto;
+
+  width: 3.25rem;
+  height: 3.25rem;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--color-border);
+
+  border-radius: 0.75rem;
+
+  background-color: var(--color-bg-secondary);
+
+  color: var(--color-accent);
+
+  transition:
+    border-color var(--transition-normal),
+    background-color var(--transition-normal),
+    transform var(--transition-normal);
+}
+
+
+.skills_category:hover .skills_category_icon {
+  border-color: var(--color-accent);
+
+  background-color: var(--color-bg);
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   BLOC TITRE
+   ========================================================= */
+
+.skills_category_heading {
+  min-width: 0;
+}
+
+
+/* =========================================================
+   TITRE
+   ========================================================= */
+
+.skills_category_title {
+  margin: 0;
+
+  font-size: 1.2rem;
+
+  font-weight: 700;
+
+  line-height: 1.35;
+
+  color: var(--color-text);
+}
+
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+.skills_category_description {
+  margin: 0.55rem 0 0;
+
+  font-size: 0.88rem;
+
+  line-height: 1.6;
+
+  color: var(--color-text-secondary);
+}
+
+
+/* =========================================================
+   LISTE
+   ========================================================= */
+
+.skills_list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0.75rem;
+}
+
+
+/* =========================================================
+   COMPÉTENCE
+   ========================================================= */
+
+.skill {
+  display: grid;
+
+  grid-template-columns: minmax(0, 1fr) 5.5rem 9rem;
+
+  align-items: center;
+
+  gap: 1rem;
+
+  min-height: 3rem;
+
+  padding: 0.65rem 0.75rem;
+
+  border: 1px solid transparent;
+
+  border-radius: 0.65rem;
+
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+
+.skill:hover {
+  border-color: var(--color-border);
+
+  background-color: var(--color-bg-secondary);
+}
+
+
+/* =========================================================
+   NOM
+   ========================================================= */
+
+.skill_name_wrapper {
+  min-width: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 0.65rem;
+}
+
+
+.skill_indicator {
+  flex: 0 0 auto;
+
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background-color: var(--color-accent);
+}
+
+
+.skill_name {
+  overflow: hidden;
+
+  font-size: 0.9rem;
+
+  font-weight: 600;
+
+  line-height: 1.4;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+
+  color: var(--color-text);
+}
+
+
+/* =========================================================
+   INDICATEUR DE NIVEAU
+   ========================================================= */
+
+.skill_rating {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 0.25rem;
+
+  width: 100%;
+}
+
+
+.skill_rating_dot {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background-color: var(--color-border-light);
+
+  transition:
+    background-color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+
+.skill_rating_dot_active {
+  background-color: currentColor;
+}
+
+
+/* =========================================================
+   LABEL DE NIVEAU
+   ========================================================= */
+
+.skill_level {
+  min-width: 9rem;
+
+  padding: 0.3rem 0.55rem;
+
+  border: 1px solid currentColor;
+
+  border-radius: var(--radius-pill);
+
+  font-size: 0.65rem;
+
+  font-weight: 700;
+
+  line-height: 1.3;
+
+  text-align: center;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   NIVEAUX
+   ========================================================= */
+
+
+/* Expertise */
+
+.skill_level_expertise {
+  color: #16803a;
+}
+
+.skill_level_expertise .skill_level {
+  background-color: rgba(22, 128, 58, 0.08);
+}
+
+
+/* Très bonne maîtrise */
+
+.skill_level_advanced {
+  color: #2563a6;
+}
+
+.skill_level_advanced .skill_level {
+  background-color: rgba(37, 99, 166, 0.08);
+}
+
+
+/* Bonne maîtrise */
+
+.skill_level_good {
+  color: #c47b18;
+}
+
+.skill_level_good .skill_level {
+  background-color: rgba(196, 123, 24, 0.08);
+}
+
+
+/* Maîtrise */
+
+.skill_level_basic {
+  color: var(--color-text-muted);
+}
+
+.skill_level_basic .skill_level {
+  background-color: var(--color-bg-secondary);
+
+  border-color: var(--color-border);
+}
+
+
+/* =========================================================
+   LÉGENDE
+   ========================================================= */
+
+.skills_legend {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 1rem;
+
+  max-width: 64rem;
+
+  margin: 1.5rem auto 0;
+
+  padding: 1.5rem;
+
+  border: 1px solid var(--color-border);
+
+  border-radius: var(--radius-large);
+
+  background-color: var(--color-card);
+}
+
+
+.skills_legend_item {
+  display: grid;
+
+  grid-template-columns: auto minmax(0, 1fr);
+
+  align-items: center;
+
+  gap: 1rem;
+
+  min-width: 0;
+
+  padding: 0.75rem;
+}
+
+
+.skills_legend_rating {
+  display: flex;
+
+  align-items: center;
+
+  gap: 0.25rem;
+}
+
+
+.skills_legend_content {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0.2rem;
+}
+
+
+.skills_legend_label {
+  font-size: 0.75rem;
+
+  font-weight: 700;
+
+  line-height: 1.4;
+}
+
+
+.skills_legend_description {
+  font-size: 0.75rem;
+
+  line-height: 1.5;
+
+  color: var(--color-text-secondary);
+}
+
+
+/* =========================================================
+   TABLETTE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .skills_categories {
+    grid-template-columns: 1fr;
+  }
+
+  .skills_legend {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 640px) {
+
+  .skills {
+    padding-block: 4rem;
+  }
+
+  .skills_intro {
+    margin-bottom: 2.5rem;
+
+    font-size: 0.95rem;
+  }
+
+  .skills_category {
+    padding: 1.5rem;
+  }
+
+  .skills_category_header {
+    gap: 0.8rem;
+
+    margin-bottom: 1.5rem;
+  }
+
+  .skills_category_icon {
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+
+  .skill {
+    grid-template-columns: minmax(0, 1fr) auto;
+
+    gap: 0.6rem;
+
+    padding: 0.65rem 0.5rem;
+  }
+
+  .skill_rating {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .skill_level {
+    grid-column: 1 / -1;
+
+    width: fit-content;
+
+    min-width: 0;
+
+    margin-left: 1.3rem;
+  }
+
+  .skills_legend {
+    padding: 1rem;
+  }
+
+  .skills_legend_item {
+    gap: 0.75rem;
+  }
+
+}

@@ -1,0 +1,196 @@
+/**
+ * Section Hero.
+ *
+ * Présente l'identité, le positionnement professionnel
+ * et les principales actions du portfolio.
+ */
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+  min-height: 100vh;
+
+  display: flex;
+
+  align-items: center;
+
+  padding-block: 7rem 5rem;
+
+  background-color: var(--color-bg);
+
+  transition:
+    background-color var(--transition-slow);
+}
+
+
+/* =========================================================
+   CONTENEUR
+   ========================================================= */
+
+.hero_container {
+  display: flex;
+
+  align-items: center;
+}
+
+
+/* =========================================================
+   CONTENU
+   ========================================================= */
+
+.hero_content {
+  max-width: 58rem;
+}
+
+
+/* =========================================================
+   NOM
+   ========================================================= */
+
+.hero_name {
+  margin: 0 0 1rem;
+
+  font-size: 0.72rem;
+
+  font-weight: 800;
+
+  line-height: 1.4;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.2em;
+
+  color: var(--color-accent);
+}
+
+
+/* =========================================================
+   TITRE PRINCIPAL
+   ========================================================= */
+
+.hero_title {
+  margin: 0;
+
+  font-size: clamp(3rem, 7vw, 5rem);
+
+  font-weight: 800;
+
+  line-height: 1.05;
+
+  letter-spacing: -0.045em;
+
+  color: var(--color-text);
+}
+
+
+/* =========================================================
+   SOUS-TITRE
+   ========================================================= */
+
+.hero_subtitle {
+  margin: 1rem 0 0;
+
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+
+  font-weight: 500;
+
+  line-height: 1.25;
+
+  letter-spacing: -0.02em;
+
+  color: var(--color-text-secondary);
+}
+
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+.hero_description {
+  max-width: 38rem;
+
+  margin: 1.75rem 0 0;
+
+  font-size: 0.95rem;
+
+  line-height: 1.8;
+
+  color: var(--color-text-secondary);
+}
+
+
+/* =========================================================
+   ACTIONS
+   ========================================================= */
+
+.hero_actions {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 0.75rem;
+
+  margin-top: 2rem;
+}
+
+
+/* =========================================================
+   TABLETTE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .hero {
+    min-height: auto;
+
+    padding-block: 6rem 4rem;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 640px) {
+
+  .hero {
+    padding-block: 5rem 3.5rem;
+  }
+
+
+  .hero_name {
+    font-size: 0.68rem;
+  }
+
+
+  .hero_title {
+    font-size: clamp(2.5rem, 12vw, 3.5rem);
+  }
+
+
+  .hero_subtitle {
+    font-size: 1.4rem;
+  }
+
+
+  .hero_description {
+    margin-top: 1.5rem;
+
+    font-size: 0.9rem;
+  }
+
+
+  .hero_actions {
+    flex-direction: column;
+
+    align-items: stretch;
+
+    margin-top: 1.75rem;
+  }
+
+}

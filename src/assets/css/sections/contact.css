@@ -1,0 +1,651 @@
+/**
+ * Section Contact.
+ *
+ * Présente les différents moyens de contact
+ * ainsi que l'accès au CV.
+ */
+
+
+/* =========================================================
+   SECTION
+   ========================================================= */
+
+.contact {
+  padding-block: 6rem;
+
+  background-color: var(--color-bg);
+
+  transition:
+    background-color var(--transition-slow);
+}
+
+
+/* =========================================================
+   EN-TÊTE
+   ========================================================= */
+
+.contact_header {
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+.contact_description {
+  max-width: 52rem;
+
+  margin: -1.25rem 0 2.5rem;
+
+  font-size: 1rem;
+
+  line-height: 1.8;
+
+  color: var(--color-text-secondary);
+}
+
+
+/* =========================================================
+   LISTE DES CONTACTS
+   ========================================================= */
+
+.contact_links {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 0.85rem;
+
+  margin-top: 2.5rem;
+}
+
+
+/* =========================================================
+   CARTE DE CONTACT
+   ========================================================= */
+
+.contact_link {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  min-height: 7.5rem;
+
+  padding: 0.85rem 1.5rem;
+
+  overflow: hidden;
+
+  border: 1px solid var(--color-border);
+
+  border-radius: var(--radius-large);
+
+  background-color: var(--color-card);
+
+  text-decoration: none;
+
+  color: inherit;
+
+  transition:
+    border-color var(--transition-normal),
+    box-shadow var(--transition-normal),
+    transform var(--transition-normal);
+}
+
+
+/* =========================================================
+   INDICATEUR LATÉRAL
+   ========================================================= */
+
+.contact_link::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 3px;
+  height: 100%;
+
+  background-color: var(--color-accent);
+
+  transform: scaleY(0);
+
+  transform-origin: bottom;
+
+  transition:
+    transform 0.4s ease;
+}
+
+
+/* =========================================================
+   SURVOL
+   ========================================================= */
+
+.contact_link:hover {
+  transform: translateY(-2px);
+
+  border-color: var(--color-accent);
+
+  box-shadow:
+    0 10px 25px var(--color-shadow);
+}
+
+
+.contact_link:hover::before {
+  transform: scaleY(1);
+}
+
+
+/* =========================================================
+   ICÔNE
+   ========================================================= */
+
+.contact_link_icon {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex: 0 0 auto;
+
+  width: 4rem;
+  height: 4rem;
+
+  margin-right: 1.25rem;
+
+  border-radius: 50%;
+
+  background-color: var(--color-bg-secondary);
+
+  color: var(--color-accent);
+
+  transition:
+    background-color var(--transition-normal),
+    transform var(--transition-normal);
+}
+
+
+.contact_link:hover .contact_link_icon {
+  background-color: var(--color-bg);
+
+  transform: scale(1.03);
+}
+
+
+/* =========================================================
+   CONTENU
+   ========================================================= */
+
+.contact_link_content {
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  min-width: 0;
+
+  flex: 1;
+}
+
+
+/* =========================================================
+   LIBELLÉ
+   ========================================================= */
+
+.contact_link_label {
+  display: block;
+
+  margin-bottom: 0.35rem;
+
+  font-size: 0.68rem;
+
+  font-weight: 800;
+
+  line-height: 1.4;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.12em;
+
+  color: var(--color-accent);
+}
+
+
+/* =========================================================
+   VALEUR
+   ========================================================= */
+
+.contact_link_value {
+  display: block;
+
+  font-size: 0.95rem;
+
+  font-weight: 600;
+
+  line-height: 1.4;
+
+  color: var(--color-text);
+
+  overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   FLÈCHE
+   ========================================================= */
+
+.contact_link_arrow {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex: 0 0 auto;
+
+  margin-left: 1rem;
+
+  color: var(--color-text-muted);
+
+  transition:
+    color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+
+.contact_link:hover .contact_link_arrow {
+  color: var(--color-accent);
+
+  transform: translateX(3px);
+}
+
+
+/* =========================================================
+   TÉLÉPHONE
+   ========================================================= */
+
+.contact_phone {
+  cursor: default;
+}
+
+
+.contact_phone_arrow {
+  pointer-events: none;
+}
+
+
+.contact_phone_mobile {
+  display: none;
+
+  color: inherit;
+
+  text-decoration: none;
+}
+
+
+/* =========================================================
+   CV
+   ========================================================= */
+
+.contact_cv {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 2rem;
+
+  margin-top: 1.5rem;
+
+  padding: 1.75rem 2rem;
+
+  overflow: hidden;
+
+  border: 1px solid var(--color-border);
+
+  border-radius: var(--radius-large);
+
+  background-color: var(--color-bg-secondary);
+
+  transition:
+    border-color var(--transition-normal),
+    box-shadow var(--transition-normal);
+}
+
+
+.contact_cv:hover {
+  border-color: var(--color-accent);
+
+  box-shadow:
+    0 10px 25px var(--color-shadow);
+}
+
+
+/* =========================================================
+   ICÔNE CV
+   ========================================================= */
+
+.contact_cv_icon {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex: 0 0 auto;
+
+  width: 3.5rem;
+  height: 3.5rem;
+
+  border-radius: 50%;
+
+  background-color: var(--color-accent);
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   CONTENU CV
+   ========================================================= */
+
+.contact_cv_content {
+  min-width: 0;
+
+  flex: 1;
+}
+
+
+.contact_cv_title {
+  margin: 0;
+
+  font-size: 1.2rem;
+
+  font-weight: 700;
+
+  line-height: 1.35;
+
+  color: var(--color-text);
+}
+
+
+.contact_cv_description {
+  max-width: 38rem;
+
+  margin: 0.35rem 0 0;
+
+  font-size: 0.85rem;
+
+  line-height: 1.6;
+
+  color: var(--color-text-secondary);
+}
+
+
+/* =========================================================
+   BOUTON CV
+   ========================================================= */
+
+.contact_cv_button {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 0.5rem;
+
+  flex: 0 0 auto;
+}
+
+
+/* =========================================================
+   SÉPARATION
+   ========================================================= */
+
+.contact_separator {
+  display: flex;
+
+  align-items: center;
+
+  gap: 0.75rem;
+
+  margin-top: 4rem;
+}
+
+
+.contact_separator span {
+  display: block;
+
+  height: 1px;
+
+  flex: 1;
+
+  background-color: var(--color-border);
+}
+
+
+.contact_separator_dot {
+  width: 5px !important;
+  height: 5px !important;
+
+  flex: 0 0 auto !important;
+
+  border-radius: 50%;
+
+  background-color: var(--color-accent) !important;
+}
+
+
+/* =========================================================
+   ANIMATION
+   ========================================================= */
+
+.contact_link,
+.contact_cv {
+  opacity: 0;
+
+  transform: translateY(20px);
+}
+
+
+.section_visible .contact_link,
+.section_visible .contact_cv {
+  opacity: 1;
+
+  transform: translateY(0);
+
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease,
+    border-color var(--transition-normal),
+    box-shadow var(--transition-normal);
+}
+
+
+/* =========================================================
+   DÉLAI D'APPARITION
+   ========================================================= */
+
+.section_visible .contact_link:nth-child(1) {
+  transition-delay: 0ms;
+}
+
+
+.section_visible .contact_link:nth-child(2) {
+  transition-delay: 100ms;
+}
+
+
+.section_visible .contact_link:nth-child(3) {
+  transition-delay: 200ms;
+}
+
+
+.section_visible .contact_link:nth-child(4) {
+  transition-delay: 300ms;
+}
+
+
+.section_visible .contact_link:nth-child(5) {
+  transition-delay: 400ms;
+}
+
+
+.section_visible .contact_cv {
+  transition-delay: 500ms;
+}
+
+
+/* =========================================================
+   TABLETTE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .contact_links {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+
+  .contact_cv {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+
+  .contact_cv_button {
+    width: 100%;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 640px) {
+
+  .contact {
+    padding-block: 4rem;
+  }
+
+
+  .contact_description {
+    margin-bottom: 2rem;
+
+    font-size: 0.95rem;
+  }
+
+
+  .contact_links {
+    grid-template-columns: 1fr;
+
+    gap: 0.75rem;
+
+    margin-top: 2rem;
+  }
+
+
+  .contact_link {
+    min-height: 6.5rem;
+
+    padding: 0.9rem 1.25rem;
+  }
+
+
+  .contact_link_icon {
+    width: 3.5rem;
+    height: 3.5rem;
+
+    margin-right: 1rem;
+  }
+
+
+  .contact_link_label {
+    font-size: 0.65rem;
+  }
+
+
+  .contact_link_value {
+    font-size: 0.9rem;
+  }
+
+
+  .contact_link_arrow {
+    margin-left: 0.75rem;
+  }
+
+
+  .contact_phone_desktop {
+    display: none;
+  }
+
+
+  .contact_phone_mobile {
+    display: inline;
+  }
+
+
+  .contact_cv {
+    margin-top: 1rem;
+
+    padding: 1.5rem;
+  }
+
+
+  .contact_cv_icon {
+    width: 3.25rem;
+    height: 3.25rem;
+  }
+
+
+  .contact_cv_title {
+    font-size: 1.1rem;
+  }
+
+
+  .contact_cv_description {
+    font-size: 0.82rem;
+  }
+
+
+  .contact_separator {
+    margin-top: 3rem;
+  }
+
+}
+
+
+/* =========================================================
+   PETITS ÉCRANS
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+  .contact_link {
+    padding: 0.8rem 1rem;
+  }
+
+
+  .contact_link_icon {
+    width: 3.25rem;
+    height: 3.25rem;
+
+    margin-right: 0.85rem;
+  }
+
+
+  .contact_link_arrow {
+    display: none;
+  }
+
+}

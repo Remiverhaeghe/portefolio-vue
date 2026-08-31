@@ -1,0 +1,550 @@
+/**
+ * Section Projets.
+ *
+ * Présente les principaux projets du portfolio.
+ */
+
+
+/* =========================================================
+   SECTION
+   ========================================================= */
+
+.projects {
+  padding-block: 6rem;
+
+  background-color: var(--color-bg);
+
+  transition:
+    background-color var(--transition-slow);
+}
+
+
+/* =========================================================
+   INTRODUCTION
+   ========================================================= */
+
+.projects_intro {
+  max-width: 52rem;
+
+  margin: -1.25rem 0 3rem;
+
+  font-size: 1rem;
+
+  line-height: 1.8;
+
+  color: var(--color-text-secondary);
+}
+
+
+/* =========================================================
+   LISTE
+   ========================================================= */
+
+.projects_list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 1.5rem;
+
+  max-width: 64rem;
+
+  margin-inline: auto;
+}
+
+
+/* =========================================================
+   CARTE
+   ========================================================= */
+
+.project {
+  position: relative;
+
+  overflow: hidden;
+
+  padding: 2.5rem;
+
+  border: 1px solid var(--color-border);
+
+  border-radius: var(--radius-large);
+
+  background-color: var(--color-card);
+
+  opacity: 0;
+
+  transform: translateY(20px);
+
+  transition:
+    opacity 0.7s ease var(--project-delay),
+    transform 0.7s ease var(--project-delay),
+    border-color var(--transition-normal),
+    box-shadow var(--transition-normal);
+}
+
+
+/* =========================================================
+   APPARITION
+   ========================================================= */
+
+.section_visible .project_visible {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   INDICATEUR
+   ========================================================= */
+
+.project::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 3px;
+  height: 100%;
+
+  background-color: var(--color-accent);
+
+  transform: scaleY(0);
+
+  transform-origin: bottom;
+
+  transition:
+    transform 0.45s ease;
+}
+
+
+/* =========================================================
+   SURVOL
+   ========================================================= */
+
+.project:hover {
+  transform: translateY(-3px);
+
+  border-color: var(--color-accent);
+
+  box-shadow:
+    0 12px 30px var(--color-shadow);
+}
+
+.project:hover::before {
+  transform: scaleY(1);
+}
+
+
+/* =========================================================
+   PROJET MIS EN AVANT
+   ========================================================= */
+
+.project_featured {
+  border-color: var(--color-accent);
+}
+
+
+/* =========================================================
+   EN-TÊTE
+   ========================================================= */
+
+.project_header {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 2rem;
+}
+
+
+.project_heading {
+  min-width: 0;
+}
+
+
+/* =========================================================
+   LABEL PROJET
+   ========================================================= */
+
+.project_featured_label {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 0.5rem;
+
+  margin-bottom: 0.85rem;
+
+  padding: 0.4rem 0.7rem;
+
+  border-radius: var(--radius-pill);
+
+  background-color: var(--color-bg-secondary);
+
+  font-size: 0.68rem;
+
+  font-weight: 700;
+
+  line-height: 1.3;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.1em;
+
+  color: var(--color-accent);
+}
+
+
+.project_featured_icon {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* =========================================================
+   TITRE
+   ========================================================= */
+
+.project_title {
+  margin: 0;
+
+  font-size: clamp(1.6rem, 3vw, 2.25rem);
+
+  font-weight: 700;
+
+  line-height: 1.25;
+
+  letter-spacing: -0.02em;
+
+  color: var(--color-text);
+}
+
+
+/* =========================================================
+   CONTENU
+   ========================================================= */
+
+.project_content {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 0 1.5rem;
+
+  margin-top: 2rem;
+}
+
+
+/* =========================================================
+   BLOC
+   ========================================================= */
+
+.project_block {
+  padding-block: 1.5rem;
+
+  border-top: 1px solid var(--color-border-light);
+}
+
+
+/* =========================================================
+   CONTRIBUTION
+   ========================================================= */
+
+.project_contribution {
+  grid-column: 1 / -1;
+}
+
+
+/* =========================================================
+   EN-TÊTE DU BLOC
+   ========================================================= */
+
+.project_block_header {
+  display: flex;
+
+  align-items: center;
+
+  gap: 0.6rem;
+
+  margin-bottom: 0.7rem;
+}
+
+
+/* =========================================================
+   ICÔNE DU BLOC
+   ========================================================= */
+
+.project_block_icon {
+  flex: 0 0 auto;
+
+  width: 2rem;
+  height: 2rem;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--color-border);
+
+  border-radius: 0.55rem;
+
+  background-color: var(--color-bg-secondary);
+
+  color: var(--color-accent);
+
+  transition:
+    border-color var(--transition-fast),
+    background-color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+
+.project_block:hover .project_block_icon {
+  border-color: var(--color-accent);
+
+  background-color: var(--color-bg);
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   TITRE DU BLOC
+   ========================================================= */
+
+.project_block_title {
+  margin: 0;
+
+  font-size: 0.7rem;
+
+  font-weight: 700;
+
+  line-height: 1.4;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.08em;
+
+  color: var(--color-text);
+}
+
+
+/* =========================================================
+   TEXTE
+   ========================================================= */
+
+.project_text {
+  margin: 0;
+
+  font-size: 0.9rem;
+
+  line-height: 1.7;
+
+  color: var(--color-text-secondary);
+}
+
+
+/* =========================================================
+   POINTS TECHNIQUES
+   ========================================================= */
+
+.project_highlights {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0.6rem;
+
+  margin: 0;
+
+  padding: 0;
+
+  list-style: none;
+}
+
+
+.project_highlights li {
+  position: relative;
+
+  padding-left: 1.2rem;
+
+  font-size: 0.9rem;
+
+  line-height: 1.6;
+
+  color: var(--color-text-secondary);
+}
+
+
+.project_highlights li::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0.65rem;
+  left: 0;
+
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background-color: var(--color-accent);
+}
+
+
+/* =========================================================
+   TECHNOLOGIES
+   ========================================================= */
+
+.project_technologies {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 0.5rem;
+}
+
+
+.technology_badge {
+  display: inline-flex;
+
+  align-items: center;
+
+  padding: 0.45rem 0.7rem;
+
+  border: 1px solid var(--color-border);
+
+  border-radius: var(--radius-pill);
+
+  background-color: var(--color-bg-secondary);
+
+  font-size: 0.7rem;
+
+  font-weight: 600;
+
+  line-height: 1.2;
+
+  color: var(--color-text-secondary);
+
+  transition:
+    border-color var(--transition-fast),
+    color var(--transition-fast),
+    background-color var(--transition-fast);
+}
+
+
+.technology_badge:hover {
+  border-color: var(--color-accent);
+
+  color: var(--color-accent);
+
+  background-color: var(--color-bg);
+}
+
+
+/* =========================================================
+   LIENS
+   ========================================================= */
+
+.project_links {
+  grid-column: 1 / -1;
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 0.75rem;
+
+  margin-top: 0.75rem;
+
+  padding-top: 1.5rem;
+
+  border-top: 1px solid var(--color-border-light);
+}
+
+
+.project_links .button {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 0.55rem;
+}
+
+
+/* =========================================================
+   TABLETTE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .project_content {
+    grid-template-columns: 1fr;
+  }
+
+  .project_contribution,
+  .project_links {
+    grid-column: auto;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 640px) {
+
+  .projects {
+    padding-block: 4rem;
+  }
+
+  .projects_intro {
+    margin-bottom: 2.5rem;
+
+    font-size: 0.95rem;
+  }
+
+  .project {
+    padding: 1.5rem;
+  }
+
+  .project_title {
+    font-size: 1.6rem;
+  }
+
+  .project_content {
+    grid-template-columns: 1fr;
+
+    margin-top: 1.5rem;
+  }
+
+  .project_block {
+    padding-block: 1.25rem;
+  }
+
+  .project_block_icon {
+    width: 1.85rem;
+    height: 1.85rem;
+  }
+
+  .project_links {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .project_links .button {
+    justify-content: center;
+
+    width: 100%;
+  }
+
+}

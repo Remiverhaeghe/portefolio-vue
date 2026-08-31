@@ -1,0 +1,51 @@
+/**
+ * Titre commun des sections du portfolio.
+ *
+ * Uniformise la présentation du titre
+ * de chaque section.
+ */
+
+
+/* =========================================================
+   CONTENEUR DU TITRE
+   ========================================================= */
+
+.section_header {
+  margin-bottom: 3rem;
+}
+
+
+/* =========================================================
+   TITRE PRINCIPAL
+   ========================================================= */
+
+.section_title {
+  margin: 0;
+
+  font-size: clamp(2rem, 3.5vw, 2.5rem);
+
+  font-weight: 700;
+
+  line-height: 1.15;
+
+  letter-spacing: -0.025em;
+
+  color: var(--color-text);
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 640px) {
+
+  .section_header {
+    margin-bottom: 2.25rem;
+  }
+
+  .section_title {
+    font-size: 2rem;
+  }
+
+}

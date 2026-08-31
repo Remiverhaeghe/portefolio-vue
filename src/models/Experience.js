@@ -5,6 +5,8 @@ export class Experience {
   constructor({
     title,
     company,
+    logo = '',
+    location = '',
     period,
     description = '',
     responsibilities = [],
@@ -14,6 +16,8 @@ export class Experience {
     // Informations principales du poste.
     this.title = title
     this.company = company
+    this.logo = logo
+    this.location = location
     this.period = period
 
     // Présentation du contexte professionnel.

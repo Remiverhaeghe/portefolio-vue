@@ -1,0 +1,86 @@
+/**
+ * Variables globales du portfolio.
+ *
+ * Centralise les couleurs, dimensions et transitions
+ * utilisées par l'ensemble de l'interface.
+ */
+
+
+/* =========================================================
+   THÈME CLAIR
+   ========================================================= */
+
+:root {
+  /* Fonds */
+  --color-bg: #ffffff;
+  --color-bg-secondary: #f8fafc;
+  --color-card: #ffffff;
+
+  /* Textes */
+  --color-text: #0f172a;
+  --color-text-secondary: #475569;
+  --color-text-muted: #64748b;
+
+  /* Bordures */
+  --color-border: #e2e8f0;
+  --color-border-light: #f1f5f9;
+
+  /* Accent */
+  --color-accent: #2563eb;
+  --color-accent-hover: #1d4ed8;
+
+  /* Navigation */
+  --color-navbar: rgba(255, 255, 255, 0.95);
+
+  /* Ombres */
+  --color-shadow: rgba(15, 23, 42, 0.08);
+
+  /* Mise en page */
+  --content-width: 72rem;
+  --content-padding: 1.5rem;
+
+  /* Navigation */
+  --navbar-height: 5rem;
+
+  /* Rayons */
+  --radius-small: 0.5rem;
+  --radius-medium: 0.85rem;
+  --radius-large: 1rem;
+  --radius-pill: 999px;
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.45s ease;
+}
+
+
+/* =========================================================
+   THÈME SOMBRE
+   ========================================================= */
+
+[data-theme="dark"] {
+  /* Fonds */
+  --color-bg: #0f172a;
+  --color-bg-secondary: #111827;
+  --color-card: #1e293b;
+
+  /* Textes */
+  --color-text: #f8fafc;
+  --color-text-secondary: #cbd5e1;
+  --color-text-muted: #94a3b8;
+
+  /* Bordures */
+  --color-border: #334155;
+  --color-border-light: #1e293b;
+
+  /* Accent */
+  --color-accent: #60a5fa;
+  --color-accent-hover: #93c5fd;
+
+  /* Navigation */
+  --color-navbar: rgba(15, 23, 42, 0.95);
+
+  /* Ombres */
+  --color-shadow: rgba(0, 0, 0, 0.25);
+}

@@ -4,13 +4,11 @@ import { profile } from '@/data/profile.js'
 import SectionTitle from '@/components/common/SectionTitle.vue'
 import { useScrollReveal } from '@/composables/useScrollReveal.js'
 
-defineProps({
-  number: {
-    type: Number,
-    required: true,
-  },
-})
+/**
+ * Section présentant le profil et le parcours.
+ */
 
+// Gestion de l'apparition au défilement.
 const {
   element: aboutSection,
   visible: aboutVisible,
@@ -21,12 +19,12 @@ const {
   <section
     ref="aboutSection"
     :id="sections.about.anchor"
-    class="about"
+    class="section about"
     :class="{ section_visible: aboutVisible }"
   >
-    <div class="about_container">
+    <div class="container">
 
-      <!-- En-tête -->
+      <!-- Titre de section -->
       <SectionTitle
         :number="number"
         :title="sections.about.title"

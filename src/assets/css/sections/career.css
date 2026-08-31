@@ -1,0 +1,321 @@
+/**
+ * Section Objectif professionnel.
+ *
+ * Présente le positionnement professionnel recherché
+ * et les principaux types de postes ciblés.
+ */
+
+
+/* =========================================================
+   SECTION
+   ========================================================= */
+
+.career {
+  padding-block: 6rem;
+
+  background-color: var(--color-bg);
+
+  transition:
+    background-color var(--transition-slow);
+}
+
+
+/* =========================================================
+   CONTENU
+   ========================================================= */
+
+.career_content {
+  max-width: 64rem;
+
+  margin-top: 2.5rem;
+
+  padding: 2.75rem 2.5rem;
+
+  border: 1px solid var(--color-border);
+
+  border-radius: var(--radius-large);
+
+  background-color: var(--color-card);
+
+  transition:
+    border-color var(--transition-normal),
+    box-shadow var(--transition-normal),
+    transform var(--transition-normal);
+}
+
+
+/* =========================================================
+   SURVOL DE LA CARTE
+   ========================================================= */
+
+.career_content:hover {
+  border-color: var(--color-accent);
+
+  box-shadow:
+    0 12px 30px var(--color-shadow);
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   LABEL
+   ========================================================= */
+
+.career_label {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 0.5rem;
+
+  margin-bottom: 1rem;
+
+  font-size: 0.7rem;
+
+  font-weight: 700;
+
+  line-height: 1.4;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.1em;
+
+  color: var(--color-accent);
+}
+
+
+.career_label_icon {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 1.9rem;
+  height: 1.9rem;
+
+  border: 1px solid var(--color-border);
+
+  border-radius: 0.5rem;
+
+  background-color: var(--color-bg-secondary);
+
+  transition:
+    border-color var(--transition-fast),
+    background-color var(--transition-fast);
+}
+
+
+.career_content:hover .career_label_icon {
+  border-color: var(--color-accent);
+
+  background-color: var(--color-bg);
+}
+
+
+/* =========================================================
+   TITRE
+   ========================================================= */
+
+.career_title {
+  margin: 0;
+
+  font-size: clamp(1.6rem, 2.5vw, 2rem);
+
+  font-weight: 700;
+
+  line-height: 1.3;
+
+  letter-spacing: -0.02em;
+
+  color: var(--color-text);
+}
+
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+.career_description {
+  max-width: 54rem;
+
+  margin: 1.25rem 0 0;
+
+  font-size: 1rem;
+
+  line-height: 1.8;
+
+  color: var(--color-text-secondary);
+}
+
+
+/* =========================================================
+   SÉPARATEUR
+   ========================================================= */
+
+.career_separator {
+  width: 100%;
+
+  height: 1px;
+
+  margin-block: 2.25rem;
+
+  background-color: var(--color-border-light);
+}
+
+
+/* =========================================================
+   POSTES RECHERCHÉS
+   ========================================================= */
+
+.career_positions_header {
+  display: flex;
+
+  align-items: center;
+
+  gap: 0.6rem;
+
+  margin-bottom: 1rem;
+}
+
+
+.career_positions_icon {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 1.9rem;
+  height: 1.9rem;
+
+  border: 1px solid var(--color-border);
+
+  border-radius: 0.5rem;
+
+  background-color: var(--color-bg-secondary);
+
+  color: var(--color-accent);
+}
+
+
+.career_positions_label {
+  margin: 0;
+
+  font-size: 0.7rem;
+
+  font-weight: 700;
+
+  line-height: 1.4;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.1em;
+
+  color: var(--color-text);
+}
+
+
+/* =========================================================
+   LISTE DES POSTES
+   ========================================================= */
+
+.career_positions_list {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 0.65rem;
+}
+
+
+/* =========================================================
+   BADGE
+   ========================================================= */
+
+.career_position {
+  display: inline-flex;
+
+  align-items: center;
+
+  min-height: 2.25rem;
+
+  padding-inline: 0.9rem;
+
+  border: 1px solid var(--color-border);
+
+  border-radius: var(--radius-pill);
+
+  background-color: var(--color-bg-secondary);
+
+  font-size: 0.78rem;
+
+  font-weight: 500;
+
+  line-height: 1.4;
+
+  color: var(--color-text-secondary);
+
+  transition:
+    border-color var(--transition-fast),
+    color var(--transition-fast),
+    background-color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+
+.career_position:hover {
+  border-color: var(--color-accent);
+
+  background-color: var(--color-bg);
+
+  color: var(--color-accent);
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 640px) {
+
+  .career {
+    padding-block: 4rem;
+  }
+
+
+  .career_content {
+    margin-top: 2rem;
+
+    padding: 1.75rem 1.5rem;
+  }
+
+
+  .career_title {
+    font-size: 1.45rem;
+  }
+
+
+  .career_description {
+    font-size: 0.95rem;
+
+    line-height: 1.75;
+  }
+
+
+  .career_separator {
+    margin-block: 2rem;
+  }
+
+
+  .career_positions_list {
+    gap: 0.5rem;
+  }
+
+
+  .career_position {
+    font-size: 0.75rem;
+  }
+
+}
