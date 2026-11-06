@@ -22,7 +22,9 @@ export function useScrollReveal() {
         }
       },
       {
-        threshold: 0.15,
+        // Un seuil en ratio ne serait jamais atteint par une section
+        // plus haute que l'écran, d'où une marge à la place.
+        rootMargin: '0px 0px -15% 0px',
       },
     )
 
