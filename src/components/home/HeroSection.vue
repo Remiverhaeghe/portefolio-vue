@@ -1,5 +1,6 @@
 <script setup>
 import { profile } from '@/data/profile.js'
+import { sections } from '@/data/sections.js'
 
 
 /**
@@ -62,14 +63,14 @@ import { profile } from '@/data/profile.js'
         <div class="hero_actions">
 
           <a
-            href="#experience"
+            :href="`#${sections.experience.anchor}`"
             class="button button_primary"
           >
             Découvrir mon parcours
           </a>
 
           <a
-            href="#contact"
+            :href="`#${sections.contact.anchor}`"
             class="button button_secondary"
           >
             Me contacter
