@@ -74,12 +74,11 @@ export const profile = new Profile({
   // Informations de contact.
   location: 'France',
   email: 'remi.verhaeghe59@gmail.com',
-  phone: '+33 6 09 91 33 05',
 
   // Réseaux professionnels.
   github: 'https://github.com/remiverhaeghe',
   linkedin: 'https://www.linkedin.com/in/remi-verhaeghe-99a532121',
 
   // CV.
-  cvUrl: '/cv.pdf',
+  cvUrl: '',
 })

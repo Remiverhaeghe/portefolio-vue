@@ -1,14 +1,9 @@
 <script setup>
 import NavigationBar from '@/components/common/NavigationBar.vue'
-import { RouterView } from 'vue-router'
+import HomeView from '@/views/HomeView.vue'
 </script>
 
 <template>
   <NavigationBar />
-
-  <RouterView v-slot="{ Component }">
-    <Transition name="page" mode="out-in">
-      <component :is="Component" />
-    </Transition>
-  </RouterView>
+  <HomeView />
 </template>

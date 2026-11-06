@@ -286,9 +286,6 @@ src/
 │   ├── Skill.js
 │   └── SkillCategory.js
 │
-├── router/
-│   └── index.js
-│
 ├── views/
 │   └── HomeView.vue
 │
