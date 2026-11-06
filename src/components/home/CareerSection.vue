@@ -1,4 +1,5 @@
 <script setup>
+import { career } from '@/data/career.js'
 import { sections } from '@/data/sections.js'
 import SectionTitle from '@/components/common/SectionTitle.vue'
 import AppIcon from '@/components/common/AppIcon.vue'
@@ -15,13 +16,6 @@ const {
   element: careerSection,
   visible: careerVisible,
 } = useScrollReveal()
-
-const positions = [
-  'Développement Java',
-  'Développement d’applications métier',
-  'Développement Full-Stack',
-  'Projets techniques à forte dimension métier',
-]
 </script>
 
 <template>
@@ -67,18 +61,14 @@ const positions = [
         <!-- Titre -->
 
         <h2 class="career_title">
-          Développeur logiciel / Ingénieur développement
+          {{ career.title }}
         </h2>
 
 
         <!-- Description -->
 
         <p class="career_description">
-          Mettre à profit mon expérience du développement Java,
-          des applications métier et des environnements industriels
-          au sein d’une équipe technique où je pourrai contribuer
-          à des projets concrets et poursuivre mon évolution dans
-          le développement logiciel.
+          {{ career.description }}
         </p>
 
 
@@ -93,7 +83,7 @@ const positions = [
              POSTES RECHERCHÉS
              =================================================== -->
 
-        <div class="career_positions">
+        <div v-if="career.hasTargets()" class="career_positions">
 
           <div class="career_positions_header">
 
@@ -114,7 +104,7 @@ const positions = [
           <div class="career_positions_list">
 
             <span
-              v-for="position in positions"
+              v-for="position in career.targets"
               :key="position"
               class="career_position"
             >

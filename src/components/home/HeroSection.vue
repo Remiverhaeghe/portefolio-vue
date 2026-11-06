@@ -25,7 +25,7 @@ import { sections } from '@/data/sections.js'
              ================================================= -->
 
         <p class="hero_name">
-          {{ profile.displayName }}
+          {{ profile.getFullName() }}
         </p>
 
 
@@ -43,7 +43,7 @@ import { sections } from '@/data/sections.js'
              ================================================= -->
 
         <p class="hero_subtitle">
-          Profil technique & industriel
+          {{ profile.shortTitle }}
         </p>
 
 

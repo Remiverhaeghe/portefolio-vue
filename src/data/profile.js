@@ -9,18 +9,18 @@ export const profile = new Profile({
   lastName: 'Verhaeghe',
 
   // Positionnement professionnel.
-  title: 'Développeur Java / Profil technique & industriel',
-  shortTitle: 'Développeur logiciel',
+  title: 'Développeur Java',
+  shortTitle: 'Applications métier · Expérience industrielle',
 
   // Présentation courte.
   introduction:
-    'Profil technique polyvalent associant développement logiciel, applications métier et expérience des environnements industriels et opérationnels.',
+    'Je développe des applications métier en Java depuis 2024, après onze ans à organiser la maintenance et la production ferroviaire à la SNCF. Je cherche une équipe où la compréhension du métier compte autant que la qualité du code.',
 
   // Présentation détaillée.
   about: [
-    'Un parcours associant développement informatique, analyse fonctionnelle, méthodes, maintenance et support permet d’appréhender les problématiques techniques dans leur contexte métier.',
-    'L’expérience acquise dans des environnements industriels et opérationnels complète les compétences de développement et facilite la compréhension des besoins et des contraintes métier.',
-    'L’objectif professionnel est de mettre cette double compétence technique et métier au service de projets concrets.',
+    'Chez DSD System, je fais évoluer des applications métier Java / Spring pour l’industrie : analyse du besoin, conception, développement, interfaces avec des systèmes externes et optimisation SQL.',
+    'Avant cela, j’ai passé onze ans à la SNCF, en maintenance, production, planification et pilotage de projets, jusqu’à encadrer des équipes de quinze personnes.',
+    'De ce parcours, je garde l’habitude de partir du terrain : comprendre qui utilise l’outil, ce qui le bloque, et livrer quelque chose de fiable plutôt que de spectaculaire.',
   ],
 
   // Informations affichées dans le Hero.

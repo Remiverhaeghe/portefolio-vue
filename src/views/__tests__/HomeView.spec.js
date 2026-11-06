@@ -4,6 +4,7 @@ import { mount } from '@vue/test-utils'
 
 import HomeView from '@/views/HomeView.vue'
 import { sections } from '@/data/sections.js'
+import { profile } from '@/data/profile.js'
 
 beforeAll(() => {
   vi.stubGlobal(
@@ -26,6 +27,12 @@ describe('HomeView', () => {
     expect(renderedIds).toEqual(
       Object.values(sections).map((section) => section.anchor),
     )
+  })
+
+  it('affiche le nom complet dans le hero', () => {
+    const wrapper = mount(HomeView)
+
+    expect(wrapper.find('.hero_name').text()).toBe(profile.getFullName())
   })
 
   it('ne contient aucun lien interne vers une ancre absente', () => {
