@@ -7,30 +7,16 @@ import AppIcon from '@/components/common/AppIcon.vue'
 /**
  * Section présentant les informations principales du profil.
  */
-
-/**
- * Retourne l'icône correspondant à chaque information.
- */
-const getProfileIcon = (label) => {
-  const icons = {
-    Expertise: 'star',
-    Domaine: 'layers',
-    Environnement: 'building',
-    Orientation: 'compass',
-  }
-
-  return icons[label] || 'layers'
-}
 </script>
 
 <template>
-  <section :id="sections.profile?.anchor || 'profil'" class="section profile_summary">
+  <section :id="sections.profile.anchor" class="section profile_summary">
     <div class="container">
       <!-- =====================================================
            TITRE
            ===================================================== -->
 
-      <SectionTitle :title="sections.profile?.title || 'Profil'" />
+      <SectionTitle :title="sections.profile.title" />
 
       <!-- =====================================================
            PROFIL
@@ -41,7 +27,7 @@ const getProfileIcon = (label) => {
           <!-- Icône -->
 
           <div class="profile_summary_icon">
-            <AppIcon :name="getProfileIcon(item.label)" :size="22" />
+            <AppIcon :name="item.icon" :size="22" />
           </div>
 
           <!-- Contenu -->

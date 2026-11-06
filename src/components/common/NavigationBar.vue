@@ -21,40 +21,10 @@ const {
 } = useTheme()
 
 // Éléments affichés dans la navigation.
-const navigationItems = [
-  {
-    id: 'accueil',
-    label: 'Accueil',
-  },
-  {
-    id: 'profil',
-    label: 'Profil',
-  },
-  {
-    id: sections.about.anchor,
-    label: sections.about.title,
-  },
-  {
-    id: sections.experience.anchor,
-    label: sections.experience.title,
-  },
-  {
-    id: sections.skills.anchor,
-    label: sections.skills.title,
-  },
-  {
-    id: sections.projects.anchor,
-    label: sections.projects.title,
-  },
-  {
-    id: sections.career.anchor,
-    label: sections.career.title,
-  },
-  {
-    id: sections.contact.anchor,
-    label: sections.contact.title,
-  },
-]
+const navigationItems = Object.values(sections).map((section) => ({
+  id: section.anchor,
+  label: section.title,
+}))
 
 // Sections surveillées par le système de navigation.
 const sectionIds = navigationItems.map(
@@ -78,7 +48,7 @@ const closeMenu = () => {
 
       <!-- Identité -->
       <a
-        href="#accueil"
+        :href="`#${sections.hero.anchor}`"
         class="navbar_logo"
         @click="closeMenu"
       >

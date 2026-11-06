@@ -27,18 +27,22 @@ export const profile = new Profile({
   focus: [
     {
       label: 'Expertise',
+      icon: 'star',
       value: 'Java',
     },
     {
       label: 'Domaine',
+      icon: 'layers',
       value: 'Applications métier',
     },
     {
       label: 'Environnement',
+      icon: 'building',
       value: 'Industrie',
     },
     {
       label: 'Orientation',
+      icon: 'compass',
       value: 'Full-Stack',
     },
   ],

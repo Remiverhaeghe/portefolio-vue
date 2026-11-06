@@ -7,6 +7,7 @@ import { SkillCategory } from '@/models/SkillCategory.js'
 export const skillCategories = [
   new SkillCategory({
     title: 'Développement',
+    icon: 'code',
     description:
       'Développement d’applications métier et de services.',
 
@@ -21,6 +22,7 @@ export const skillCategories = [
 
   new SkillCategory({
     title: 'Bases de données',
+    icon: 'database',
     description:
       'Conception, exploitation et optimisation des données.',
 
@@ -32,6 +34,7 @@ export const skillCategories = [
 
   new SkillCategory({
     title: 'API & intégration',
+    icon: 'layers',
     description:
       'Échanges de données et intégration avec des systèmes externes.',
 
@@ -45,6 +48,7 @@ export const skillCategories = [
 
   new SkillCategory({
     title: 'Outils & environnement',
+    icon: 'wrench',
     description:
       'Outils utilisés dans le développement et la gestion des projets.',
 
@@ -57,6 +61,7 @@ export const skillCategories = [
 
   new SkillCategory({
     title: 'Méthodes & métier',
+    icon: 'briefcase',
     description:
       'Compétences issues du parcours technique et industriel.',
 

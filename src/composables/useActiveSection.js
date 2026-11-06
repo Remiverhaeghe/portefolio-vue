@@ -4,7 +4,7 @@ import { ref, onMounted, onUnmounted } from 'vue'
  * Synchronise la navigation avec la section visible.
  */
 export function useActiveSection(sectionIds = []) {
-  const activeSection = ref('accueil')
+  const activeSection = ref(sectionIds[0] ?? '')
 
   let ticking = false
 

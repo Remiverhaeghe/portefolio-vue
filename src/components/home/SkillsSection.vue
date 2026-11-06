@@ -20,20 +20,6 @@ const {
 } = useScrollReveal()
 
 
-/**
- * Retourne l'icône associée à une catégorie.
- */
-const getCategoryIcon = (title) => {
-  const icons = {
-    'Développement': 'code',
-    'Bases de données': 'database',
-    'API & intégration': 'layers',
-    'Outils & environnement': 'wrench',
-    'Méthodes & métier': 'briefcase',
-  }
-
-  return icons[title] || 'layers'
-}
 </script>
 
 
@@ -91,7 +77,7 @@ const getCategoryIcon = (title) => {
 
             <div class="skills_category_icon">
               <AppIcon
-                :name="getCategoryIcon(category.title)"
+                :name="category.icon"
                 :size="28"
               />
             </div>

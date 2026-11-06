@@ -5,6 +5,7 @@ export class SkillCategory {
   constructor({
     title,
     description = '',
+    icon = 'layers',
     skills = [],
   }) {
     // Nom de la catégorie.
@@ -13,21 +14,10 @@ export class SkillCategory {
     // Description du domaine.
     this.description = description
 
+    // Nom de l'icône AppIcon.
+    this.icon = icon
+
     // Compétences appartenant à la catégorie.
     this.skills = skills
-  }
-
-  /**
-   * Retourne le nombre de compétences de la catégorie.
-   */
-  getSkillCount() {
-    return this.skills.length
-  }
-
-  /**
-   * Indique si la catégorie contient des compétences.
-   */
-  hasSkills() {
-    return this.skills.length > 0
   }
 }

@@ -13,7 +13,7 @@ import { sections } from '@/data/sections.js'
 
 <template>
   <section
-    id="accueil"
+    :id="sections.hero.anchor"
     class="hero"
   >
     <div class="container hero_container">
