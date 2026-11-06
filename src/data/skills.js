@@ -21,6 +21,21 @@ export const skillCategories = [
   }),
 
   new SkillCategory({
+    title: 'Python & mobile',
+    icon: 'mobile',
+    description:
+      'Applications web, outils de données et application mobile développés en projet personnel.',
+
+    skills: [
+      new Skill('Python', 4),
+      new Skill('FastAPI', 3),
+      new Skill('Flutter', 3),
+      new Skill('pytest', 3),
+      new Skill('Playwright', 3),
+    ],
+  }),
+
+  new SkillCategory({
     title: 'Bases de données',
     icon: 'database',
     description:
@@ -55,6 +70,7 @@ export const skillCategories = [
     skills: [
       new Skill('Maven', 4),
       new Skill('Git', 4),
+      new Skill('Docker', 3),
       new Skill('IntelliJ IDEA', 4),
     ],
   }),

@@ -47,32 +47,12 @@ export const profile = new Profile({
     },
   ],
 
-  // Synthèse du profil.
-  summary: [
-    {
-      label: 'Expérience',
-      value: 'Développement logiciel',
-    },
-    {
-      label: 'Développement',
-      value: 'Java / Spring / SQL',
-    },
-    {
-      label: 'Métier',
-      value: 'Applications métier',
-    },
-    {
-      label: 'Environnement',
-      value: 'Industrie',
-    },
-    {
-      label: 'Approche',
-      value: 'Analyse & conception',
-    },
-    {
-      label: 'Orientation',
-      value: 'Développement Full-Stack',
-    },
+  // Postes recherchés.
+  targets: [
+    'Développement Java',
+    'Développement d’applications métier',
+    'Développement Full-Stack',
+    'Projets techniques à forte dimension métier',
   ],
 
   // Informations de contact.

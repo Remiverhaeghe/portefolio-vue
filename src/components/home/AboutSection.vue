@@ -2,10 +2,11 @@
 import { sections } from '@/data/sections.js'
 import { profile } from '@/data/profile.js'
 import SectionTitle from '@/components/common/SectionTitle.vue'
+import AppIcon from '@/components/common/AppIcon.vue'
 import { useScrollReveal } from '@/composables/useScrollReveal.js'
 
 /**
- * Section présentant le profil et le parcours.
+ * Section présentant le profil, les points clés et les postes recherchés.
  */
 
 // Gestion de l'apparition au défilement.
@@ -26,7 +27,6 @@ const {
 
       <!-- Titre de section -->
       <SectionTitle
-        :number="number"
         :title="sections.about.title"
       />
 
@@ -41,6 +41,61 @@ const {
           {{ paragraph }}
         </p>
 
+      </div>
+
+      <!-- Points clés -->
+      <div
+        v-if="profile.focus.length"
+        class="profile_summary_card"
+      >
+        <article
+          v-for="item in profile.focus"
+          :key="item.label"
+          class="profile_summary_item"
+        >
+          <div class="profile_summary_icon">
+            <AppIcon :name="item.icon" :size="22" />
+          </div>
+
+          <div class="profile_summary_content">
+            <p class="profile_summary_label">
+              {{ item.label }}
+            </p>
+
+            <p class="profile_summary_value">
+              {{ item.value }}
+            </p>
+          </div>
+        </article>
+      </div>
+
+      <!-- Postes recherchés -->
+      <div
+        v-if="profile.targets.length"
+        class="about_targets"
+      >
+        <div class="career_positions_header">
+          <span class="career_positions_icon">
+            <AppIcon
+              name="briefcase"
+              :size="17"
+            />
+          </span>
+
+          <p class="career_positions_label">
+            Postes recherchés
+          </p>
+        </div>
+
+        <div class="career_positions_list">
+          <span
+            v-for="target in profile.targets"
+            :key="target"
+            class="career_position"
+          >
+            {{ target }}
+          </span>
+        </div>
       </div>
 
     </div>

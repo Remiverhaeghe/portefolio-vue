@@ -12,12 +12,6 @@ export const sections = {
     anchor: 'accueil',
   }),
 
-  profile: new Section({
-    key: 'profile',
-    title: 'Profil',
-    anchor: 'profil',
-  }),
-
   about: new Section({
     key: 'about',
     title: 'À propos',
@@ -40,12 +34,6 @@ export const sections = {
     key: 'projects',
     title: 'Projets',
     anchor: 'projets',
-  }),
-
-  career: new Section({
-    key: 'career',
-    title: 'Objectif professionnel',
-    anchor: 'objectif',
   }),
 
   contact: new Section({

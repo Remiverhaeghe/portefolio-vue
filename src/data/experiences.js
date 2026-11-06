@@ -9,7 +9,7 @@ export const experiences = [
     // Informations principales.
     title: 'Développeur Java',
     company: 'DSD System',
-    logo: '/images/companies/DSDSystem.png',
+    logo: `${import.meta.env.BASE_URL}images/companies/DSDSystem.png`,
     location: 'Lille (59)',
     period: '2022 - Aujourd’hui',
 
@@ -76,7 +76,7 @@ export const experiences = [
   new Experience({
     title: 'Gestion du plan de transport des contrôleurs TER',
     company: 'SNCF · Intérim',
-    logo: '/images/companies/SNCF.png',
+    logo: `${import.meta.env.BASE_URL}images/companies/SNCF.png`,
     location: 'Hauts-de-France',
     period: '2021',
 
@@ -88,7 +88,7 @@ export const experiences = [
     // Informations principales.
     title: 'Maintenance, Production, Planification, Projets',
     company: 'SNCF',
-    logo: '/images/companies/SNCF.png',
+    logo: `${import.meta.env.BASE_URL}images/companies/SNCF.png`,
     location: 'Technicentre Atlantique · Chatillon (92)',
     period: '2010 - 2020',
 

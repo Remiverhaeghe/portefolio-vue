@@ -1,23 +1,6 @@
 /**
- * Section Profil — En un coup d'œil.
- *
- * Présente les principales caractéristiques du profil
- * sous forme d'une carte synthétique.
+ * Carte des points clés du profil, affichée dans la section À propos.
  */
-
-
-/* =========================================================
-   SECTION
-   ========================================================= */
-
-.profile_summary {
-  padding-block: 6rem;
-
-  background-color: var(--color-bg);
-
-  transition:
-    background-color var(--transition-slow);
-}
 
 
 /* =========================================================
@@ -243,11 +226,6 @@
    ========================================================= */
 
 @media (max-width: 640px) {
-
-  .profile_summary {
-    padding-block: 4rem;
-  }
-
 
   .profile_summary_card {
     grid-template-columns: 1fr;

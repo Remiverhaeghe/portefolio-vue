@@ -10,7 +10,7 @@ export class Profile {
     introduction,
     about = [],
     focus = [],
-    summary = [],
+    targets = [],
     location = '',
     email = '',
     phone = '',
@@ -30,7 +30,7 @@ export class Profile {
     this.introduction = introduction
     this.about = about
     this.focus = focus
-    this.summary = summary
+    this.targets = targets
 
     // Coordonnées.
     this.location = location

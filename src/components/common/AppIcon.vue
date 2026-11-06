@@ -19,6 +19,7 @@ import {
   Briefcase,
   Database,
   Compass,
+  Smartphone,
 } from 'lucide-vue-next'
 
 const icons = {
@@ -41,6 +42,7 @@ const icons = {
   briefcase: Briefcase,
   database: Database,
   compass: Compass,
+  mobile: Smartphone,
 }
 
 defineProps({
