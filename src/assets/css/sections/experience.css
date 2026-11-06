@@ -199,6 +199,35 @@
   transform: translate(-50%, -50%);
 }
 
+.experience_item_training .experience_marker span {
+  border-style: dashed;
+}
+
+.experience_item_training .experience_marker span::after {
+  display: none;
+}
+
+
+/* =========================================================
+   TYPE D'EXPÉRIENCE
+   ========================================================= */
+
+.experience_type {
+  display: inline-block;
+
+  margin-bottom: 0.35rem;
+
+  font-size: 0.7rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+
+  color: var(--color-accent);
+}
+
 
 /* =========================================================
    CARTE

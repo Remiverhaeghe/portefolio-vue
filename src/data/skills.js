@@ -12,7 +12,7 @@ export const skillCategories = [
       'Développement d’applications métier et de services.',
 
     skills: [
-      new Skill('Java', 5),
+      new Skill('Java', 4),
       new Skill('Spring', 4),
       new Skill('Hibernate', 4),
       new Skill('JavaScript', 3),
@@ -27,8 +27,8 @@ export const skillCategories = [
       'Conception, exploitation et optimisation des données.',
 
     skills: [
-      new Skill('SQL Server', 5),
-      new Skill('SQL', 5),
+      new Skill('SQL Server', 4),
+      new Skill('SQL', 4),
     ],
   }),
 

@@ -1,8 +1,14 @@
+export const EXPERIENCE_TYPES = {
+  job: 'job',
+  training: 'training',
+}
+
 /**
- * Modèle représentant une expérience professionnelle.
+ * Modèle représentant une expérience professionnelle ou une formation.
  */
 export class Experience {
   constructor({
+    type = EXPERIENCE_TYPES.job,
     title,
     company,
     logo = '',
@@ -14,6 +20,7 @@ export class Experience {
     achievements = [],
   }) {
     // Informations principales du poste.
+    this.type = type
     this.title = title
     this.company = company
     this.logo = logo
@@ -38,5 +45,9 @@ export class Experience {
    */
   hasAchievements() {
     return this.achievements.length > 0
+  }
+
+  isTraining() {
+    return this.type === EXPERIENCE_TYPES.training
   }
 }

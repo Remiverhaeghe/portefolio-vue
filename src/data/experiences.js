@@ -1,4 +1,4 @@
-import { Experience } from '@/models/Experience.js'
+import { Experience, EXPERIENCE_TYPES } from '@/models/Experience.js'
 
 /**
  * Parcours professionnel présenté dans le portfolio.
@@ -11,11 +11,11 @@ export const experiences = [
     company: 'DSD System',
     logo: '/images/companies/DSDSystem.png',
     location: 'Lille (59)',
-    period: '2024 - Aujourd’hui',
+    period: '2022 - Aujourd’hui',
 
     // Contexte professionnel.
     description:
-      'Développement et évolution d’applications métier dans un environnement industriel.',
+      'Arrivé en stage de fin de formation, j’ai été recruté au support, puis nommé responsable support, avant de rejoindre l’équipe de développement. J’y fais évoluer des applications métier pour l’industrie.',
 
     // Principales responsabilités.
     responsibilities: [
@@ -38,7 +38,7 @@ export const experiences = [
 
     // Technologies et outils utilisés.
     technologies: [
-      'Java',
+      'Java 8',
       'Spring',
       'Hibernate',
       'SQL Server',
@@ -53,12 +53,44 @@ export const experiences = [
 
 
   new Experience({
+    type: EXPERIENCE_TYPES.training,
+
+    title: 'Titre RNCP Développeur Web et Web Mobile (niveau 5)',
+    company: 'Foreach Academy',
+    location: 'Lille (59)',
+    period: '2021 - 2022',
+
+    description:
+      'Reconversion professionnelle après plusieurs mois d’autoformation : six mois de formation intensive au développement web, suivis de deux mois de stage chez DSD System. Titre obtenu.',
+
+    achievements: [
+      'Application Alumni pour un réseau d’anciens élèves.',
+      'Site web pour le LOSC, réalisé comme projet de formation sans client réel.',
+    ],
+
+    technologies: [
+      'PHP',
+    ],
+  }),
+
+  new Experience({
+    title: 'Gestion du plan de transport des contrôleurs TER',
+    company: 'SNCF · Intérim',
+    logo: '/images/companies/SNCF.png',
+    location: 'Hauts-de-France',
+    period: '2021',
+
+    description:
+      'Retour à la SNCF en mission d’intérim pour gérer le plan de transport des contrôleurs TER des Hauts-de-France, en parallèle de mon autoformation au développement.',
+  }),
+
+  new Experience({
     // Informations principales.
     title: 'Maintenance, Production, Planification, Projets',
     company: 'SNCF',
     logo: '/images/companies/SNCF.png',
     location: 'Technicentre Atlantique · Chatillon (92)',
-    period: '2010 - 2021',
+    period: '2010 - 2020',
 
     // Contexte professionnel.
     description:
@@ -73,7 +105,6 @@ export const experiences = [
       'Coordination entre les différents services et intervenants.',
       'Pilotage et suivi de projets techniques.',
       'Gestion des moyens et des ressources nécessaires aux opérations.',
-      'Gestion des activités de transport sur la région Hauts-de-France.',
     ],
 
     // Réalisations significatives.

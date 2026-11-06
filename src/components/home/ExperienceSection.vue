@@ -46,6 +46,7 @@ const {
           class="experience_item"
           :class="{
             experience_item_visible: experienceVisible,
+            experience_item_training: experience.isTraining(),
           }"
           :style="{
             '--experience-delay': `${index * 180}ms`,
@@ -131,6 +132,13 @@ const {
               <!-- -------------------------------------------------
                    POSTE
                    ------------------------------------------------- -->
+
+              <span
+                v-if="experience.isTraining()"
+                class="experience_type"
+              >
+                Formation
+              </span>
 
               <h3 class="experience_title">
                 {{ experience.title }}

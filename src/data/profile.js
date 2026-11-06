@@ -14,12 +14,12 @@ export const profile = new Profile({
 
   // Présentation courte.
   introduction:
-    'Je développe des applications métier en Java depuis 2024, après onze ans à organiser la maintenance et la production ferroviaire à la SNCF. Je cherche une équipe où la compréhension du métier compte autant que la qualité du code.',
+    'Après plus de dix ans à organiser la maintenance et la production ferroviaire à la SNCF, je me suis reconverti dans le développement. Je développe aujourd’hui des applications métier en Java, et je cherche une équipe où la compréhension du métier compte autant que la qualité du code.',
 
   // Présentation détaillée.
   about: [
-    'Chez DSD System, je fais évoluer des applications métier Java / Spring pour l’industrie : analyse du besoin, conception, développement, interfaces avec des systèmes externes et optimisation SQL.',
-    'Avant cela, j’ai passé onze ans à la SNCF, en maintenance, production, planification et pilotage de projets, jusqu’à encadrer des équipes de quinze personnes.',
+    'J’ai passé plus de dix ans à la SNCF, en maintenance, production, planification et pilotage de projets, jusqu’à encadrer des équipes de quinze personnes, puis géré en intérim le plan de transport des contrôleurs TER des Hauts-de-France pendant que je me formais au développement.',
+    'J’ai ensuite choisi de me reconvertir et obtenu à la Foreach Academy de Lille le titre RNCP Développeur Web et Web Mobile. Chez DSD System, où j’ai fait mon stage, j’ai été recruté au support, puis nommé responsable support, avant de passer développeur Java. J’y fais évoluer des applications métier Java / Spring pour l’industrie : analyse du besoin, conception, interfaces avec des systèmes externes et optimisation SQL.',
     'De ce parcours, je garde l’habitude de partir du terrain : comprendre qui utilise l’outil, ce qui le bloque, et livrer quelque chose de fiable plutôt que de spectaculaire.',
   ],
 
