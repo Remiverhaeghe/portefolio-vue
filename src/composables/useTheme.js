@@ -1,9 +1,16 @@
-import { ref, onMounted } from 'vue'
+import { ref } from 'vue'
+
+const STORAGE_KEY = 'portfolio-theme'
 
 /**
  * Gestion globale du thème clair / sombre.
+ *
+ * Le thème initial est posé par le script inline d'index.html
+ * avant le rendu, pour éviter un flash du mauvais thème.
  */
-const isDark = ref(false)
+const isDark = ref(
+  document.documentElement.getAttribute('data-theme') === 'dark',
+)
 
 export function useTheme() {
 
@@ -11,17 +18,16 @@ export function useTheme() {
    * Applique et mémorise le thème.
    */
   const applyTheme = (dark) => {
+    const theme = dark ? 'dark' : 'light'
+
     isDark.value = dark
+    document.documentElement.setAttribute('data-theme', theme)
 
-    document.documentElement.setAttribute(
-      'data-theme',
-      dark ? 'dark' : 'light',
-    )
-
-    localStorage.setItem(
-      'portfolio-theme',
-      dark ? 'dark' : 'light',
-    )
+    try {
+      localStorage.setItem(STORAGE_KEY, theme)
+    } catch {
+      // Stockage indisponible : le thème s'applique sans être mémorisé.
+    }
   }
 
   /**
@@ -30,28 +36,6 @@ export function useTheme() {
   const toggleTheme = () => {
     applyTheme(!isDark.value)
   }
-
-  /**
-   * Initialise le thème au chargement.
-   */
-  onMounted(() => {
-    const savedTheme =
-      localStorage.getItem('portfolio-theme')
-
-    // Priorité au choix enregistré.
-    if (savedTheme) {
-      applyTheme(savedTheme === 'dark')
-      return
-    }
-
-    // Sinon, utilise le thème du système.
-    const systemDark =
-      window.matchMedia(
-        '(prefers-color-scheme: dark)',
-      ).matches
-
-    applyTheme(systemDark)
-  })
 
   return {
     isDark,
