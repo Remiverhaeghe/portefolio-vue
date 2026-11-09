@@ -23,3 +23,4 @@
 - Niveaux de compétence, sections et icônes définis une seule fois dans les données
 - Tests Vitest sur les compétences et la cohérence de la navigation
 - Intégration continue et déploiement sur GitHub Pages
+- CI en lecture seule par défaut, audit npm des dépendances, Dependabot pour npm et les actions GitHub
