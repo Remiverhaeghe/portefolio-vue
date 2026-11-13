@@ -5,10 +5,12 @@
 ### Contenu
 - Présentation réécrite à la première personne
 - Parcours complété avec la formation Foreach Academy et la mission en intérim à la SNCF, dates corrigées
-- Projets : ajout du scraper de données Python, liens GitHub
-- Compétences : ajout de Python, FastAPI, Flutter, pytest, Playwright et Docker, niveaux recalibrés
+- Projets : ajout du scraper de données Python et de nas-monitor (mis en avant), liens GitHub
+- Compétences : nouvelle catégorie PHP & Symfony, ajout de Python, FastAPI, Flutter, pytest, Playwright et Docker, niveaux recalibrés
 - Sections Profil et Objectif professionnel regroupées dans À propos
 - Numéro de téléphone retiré, boutons CV masqués tant que le fichier est absent
+- nas-monitor : tests (270) et indice de mutation (96 %) mis à jour
+- Projets : ajout de secrets-audit
 
 ### Corrections
 - Nom absent du hero

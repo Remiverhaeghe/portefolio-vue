@@ -36,6 +36,21 @@ export const skillCategories = [
   }),
 
   new SkillCategory({
+    title: 'PHP & Symfony',
+    icon: 'layers',
+    description:
+      'Application web auto-hébergée développée en projet personnel, de la conception au déploiement.',
+
+    skills: [
+      new Skill('PHP', 3),
+      new Skill('Symfony', 3),
+      new Skill('PostgreSQL', 3),
+      new Skill('PHPUnit', 3),
+      new Skill('GitHub Actions', 3),
+    ],
+  }),
+
+  new SkillCategory({
     title: 'Bases de données',
     icon: 'database',
     description:
