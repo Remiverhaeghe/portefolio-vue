@@ -347,7 +347,7 @@
 
   background-color: var(--color-accent);
 
-  color: #ffffff;
+  color: var(--color-on-accent);
 }
 
 

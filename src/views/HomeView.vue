@@ -1,5 +1,6 @@
 <script setup>
 import HeroSection from '@/components/home/HeroSection.vue'
+import StatsSection from '@/components/home/StatsSection.vue'
 import AboutSection from '@/components/home/AboutSection.vue'
 import ExperienceSection from '@/components/home/ExperienceSection.vue'
 import SkillsSection from '@/components/home/SkillsSection.vue'
@@ -25,6 +26,9 @@ const sections = [
   <main>
     <!-- Accueil -->
     <HeroSection />
+
+    <!-- Chiffres clés -->
+    <StatsSection />
 
     <!-- Sections principales -->
     <component

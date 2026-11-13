@@ -1,4 +1,5 @@
 <script setup>
+import { computed, nextTick, ref } from 'vue'
 import { projects } from '@/data/projects.js'
 import { sections } from '@/data/sections.js'
 import SectionTitle from '@/components/common/SectionTitle.vue'
@@ -8,6 +9,48 @@ import { useScrollReveal } from '@/composables/useScrollReveal.js'
 /**
  * Section présentant les principaux projets.
  */
+
+// Filtre par famille de technologies.
+const ALL_STACKS = 'Tous'
+const STACK_ICONS = {
+  [ALL_STACKS]: 'layers',
+  PHP: 'server',
+  Python: 'terminal',
+  Flutter: 'mobile',
+  Java: 'coffee',
+  'Vue.js': 'layout',
+}
+const activeStack = ref(ALL_STACKS)
+const stacks = [ALL_STACKS, ...new Set(projects.flatMap((project) => project.stack))]
+
+const visibleProjects = computed(() =>
+  projects.filter(
+    (project) =>
+      activeStack.value === ALL_STACKS || project.matchesStack(activeStack.value),
+  ),
+)
+
+// Captures d'écran ouvertes en grand.
+const lightbox = ref(null)
+const openedImage = ref(null)
+
+function openImage(image) {
+  openedImage.value = image
+
+  nextTick(() => {
+    if (typeof lightbox.value?.showModal === 'function') {
+      lightbox.value.showModal()
+    }
+  })
+}
+
+function closeImage() {
+  if (typeof lightbox.value?.close === 'function') {
+    lightbox.value.close()
+  }
+
+  openedImage.value = null
+}
 
 // Gestion de l'apparition des projets.
 const {
@@ -45,15 +88,47 @@ const {
 
 
       <!-- =====================================================
+           FILTRE PAR TECHNOLOGIE
+           ===================================================== -->
+
+      <div
+        class="projects_filters"
+        role="group"
+        aria-label="Filtrer les projets par technologie"
+      >
+        <button
+          v-for="stack in stacks"
+          :key="stack"
+          type="button"
+          class="projects_filter"
+          :data-stack="stack"
+          :class="{ projects_filter_active: activeStack === stack }"
+          :aria-pressed="activeStack === stack"
+          @click="activeStack = stack"
+        >
+          <AppIcon
+            v-if="STACK_ICONS[stack]"
+            :name="STACK_ICONS[stack]"
+            :size="16"
+          />
+          <span>
+            {{ stack }}
+          </span>
+        </button>
+      </div>
+
+
+      <!-- =====================================================
            LISTE DES PROJETS
            ===================================================== -->
 
       <div class="projects_list">
 
         <article
-          v-for="(project, index) in projects"
+          v-for="(project, index) in visibleProjects"
           :key="project.title"
           class="project"
+          :data-stack="project.stack[0]"
           :class="{
             project_featured: project.featured,
             project_visible: projectsVisible,
@@ -96,6 +171,29 @@ const {
                 {{ project.title }}
               </h3>
 
+
+              <!-- Familles de technologies -->
+
+              <ul
+                v-if="project.stack.length"
+                class="project_stack"
+              >
+                <li
+                  v-for="family in project.stack"
+                  :key="family"
+                  class="project_stack_item"
+                  :data-stack="family"
+                >
+                  <AppIcon
+                    :name="STACK_ICONS[family] || 'code'"
+                    :size="14"
+                  />
+                  <span>
+                    {{ family }}
+                  </span>
+                </li>
+              </ul>
+
             </div>
 
           </div>
@@ -106,6 +204,44 @@ const {
                ================================================= -->
 
           <div class="project_content">
+
+            <!-- -------------------------------------------------
+                 CAPTURES D'ÉCRAN
+                 ------------------------------------------------- -->
+
+            <ul
+              v-if="project.hasImages()"
+              class="project_shots"
+            >
+              <li
+                v-for="image in project.images"
+                :key="image.src"
+              >
+                <button
+                  type="button"
+                  class="project_shot"
+                  :aria-label="`Agrandir la capture : ${image.alt}`"
+                  @click="openImage(image)"
+                >
+                  <img
+                    :src="image.src"
+                    :alt="image.alt"
+                    loading="lazy"
+                  >
+
+                  <span
+                    class="project_shot_icon"
+                    aria-hidden="true"
+                  >
+                    <AppIcon
+                      name="expand"
+                      :size="16"
+                    />
+                  </span>
+                </button>
+              </li>
+            </ul>
+
 
             <!-- -------------------------------------------------
                  CONTEXTE
@@ -350,5 +486,46 @@ const {
       </div>
 
     </div>
+
+    <!-- =======================================================
+         CAPTURE AGRANDIE
+         ======================================================= -->
+
+    <dialog
+      ref="lightbox"
+      class="lightbox"
+      aria-label="Capture d'écran agrandie"
+      @click.self="closeImage"
+      @close="openedImage = null"
+    >
+      <figure
+        v-if="openedImage"
+        class="lightbox_figure"
+      >
+        <img
+          :src="openedImage.src"
+          :alt="openedImage.alt"
+          class="lightbox_image"
+        >
+
+        <figcaption class="lightbox_caption">
+          {{ openedImage.alt }}
+        </figcaption>
+      </figure>
+
+      <button
+        type="button"
+        class="button button_secondary lightbox_close"
+        @click="closeImage"
+      >
+        <AppIcon
+          name="close"
+          :size="18"
+        />
+        <span>
+          Fermer
+        </span>
+      </button>
+    </dialog>
   </section>
 </template>

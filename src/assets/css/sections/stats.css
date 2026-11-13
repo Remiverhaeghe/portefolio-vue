@@ -1,0 +1,109 @@
+/**
+ * Bandeau de chiffres clés.
+ *
+ * Pas de cartes : les chiffres sont séparés par de simples filets,
+ * le seul élément colorisé est la valeur.
+ */
+
+
+.stats {
+  padding-block: 2.5rem;
+
+  border-block: 1px solid var(--color-border);
+
+  background-color: var(--color-bg-secondary);
+}
+
+.stats_list {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 0;
+}
+
+.stats_item {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0.35rem;
+
+  padding-inline: 1.5rem;
+
+  border-left: 1px solid var(--color-border);
+}
+
+.stats_item:first-child {
+  padding-left: 0;
+
+  border-left: 0;
+}
+
+.stats_icon {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 2.75rem;
+  height: 2.75rem;
+
+  margin-bottom: 0.5rem;
+
+  border-radius: var(--radius-medium);
+
+  background-color: var(--color-accent-soft);
+
+  color: var(--color-accent);
+}
+
+.stats_value {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+
+  font-weight: 700;
+
+  line-height: 1;
+
+  letter-spacing: -0.03em;
+
+  font-variant-numeric: tabular-nums;
+
+  color: var(--color-accent);
+}
+
+.stats_label {
+  max-width: 16rem;
+
+  font-size: 0.925rem;
+
+  line-height: 1.45;
+
+  color: var(--color-text-secondary);
+}
+
+@media (max-width: 52rem) {
+  .stats_list {
+    grid-template-columns: repeat(2, 1fr);
+
+    row-gap: 2rem;
+  }
+
+  .stats_item:nth-child(odd) {
+    padding-left: 0;
+
+    border-left: 0;
+  }
+}
+
+@media (max-width: 30rem) {
+  .stats_list {
+    grid-template-columns: 1fr;
+  }
+
+  .stats_item {
+    padding-left: 0;
+
+    border-left: 0;
+  }
+}

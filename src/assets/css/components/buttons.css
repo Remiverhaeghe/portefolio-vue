@@ -62,13 +62,13 @@
 .button_primary {
   background-color: var(--color-accent);
 
-  color: #ffffff;
+  color: var(--color-on-accent);
 }
 
 .button_primary:hover {
   background-color: var(--color-accent-hover);
 
-  color: #ffffff;
+  color: var(--color-on-accent);
 }
 
 

@@ -42,6 +42,7 @@
    ========================================================= */
 
 @import './sections/hero.css';
+@import './sections/stats.css';
 @import './sections/profile.css';
 @import './sections/about.css';
 @import './sections/experience.css';

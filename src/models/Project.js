@@ -13,6 +13,8 @@ export class Project {
     githubUrl = '',
     liveUrl = '',
     featured = false,
+    stack = [],
+    images = [],
   }) {
     // Informations principales.
     this.title = title
@@ -31,6 +33,26 @@ export class Project {
 
     // Mise en avant du projet.
     this.featured = featured
+
+    // Familles de technologies pour le filtre (PHP, Python...).
+    this.stack = stack
+
+    // Captures d'écran : { src, alt }.
+    this.images = images
+  }
+
+  /**
+   * Indique si le projet appartient à une famille de technologies.
+   */
+  matchesStack(stack) {
+    return this.stack.includes(stack)
+  }
+
+  /**
+   * Indique si le projet possède des captures d'écran.
+   */
+  hasImages() {
+    return this.images.length > 0
   }
 
   /**

@@ -33,10 +33,11 @@ Le texte du site est dans `src/data/`, séparé des composants :
 | `profile.js` | Identité, présentation, points clés, postes recherchés, contact, CV |
 | `experiences.js` | Parcours professionnel et formation |
 | `skills.js` | Compétences par catégorie |
-| `projects.js` | Projets |
+| `projects.js` | Projets : problématique, contribution, famille de technologies pour le filtre, captures d'écran |
+| `stats.js` | Chiffres clés du bandeau sous l'accueil |
 | `sections.js` | Titres, ancres et ordre de la navigation |
 
-Les images sont dans `public/images/`. Les chemins vers `public/` passent par `import.meta.env.BASE_URL` pour fonctionner sous le sous-chemin de GitHub Pages.
+Les images sont dans `public/images/` (captures des projets dans `public/images/projects/`). Les chemins vers `public/` passent par `import.meta.env.BASE_URL` pour fonctionner sous le sous-chemin de GitHub Pages.
 
 ## Déploiement
 

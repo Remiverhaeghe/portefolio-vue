@@ -548,3 +548,297 @@
   }
 
 }
+
+
+/* =========================================================
+   FILTRE PAR TECHNOLOGIE
+   ========================================================= */
+
+.projects_filters {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 0.5rem;
+
+  max-width: 64rem;
+
+  margin: 0 auto 2rem;
+}
+
+.projects_filter {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 0.45rem;
+
+  padding: 0.45rem 1.1rem;
+
+  border: 1px solid var(--color-border);
+
+  border-radius: var(--radius-pill);
+
+  background-color: transparent;
+
+  font: inherit;
+
+  font-size: 0.925rem;
+
+  color: var(--color-text-secondary);
+
+  cursor: pointer;
+
+  transition:
+    border-color var(--transition-fast),
+    color var(--transition-fast),
+    background-color var(--transition-fast);
+}
+
+.projects_filter:hover {
+  border-color: var(--stack-color, var(--color-accent));
+
+  color: var(--color-text);
+}
+
+.projects_filter:focus-visible {
+  outline: 2px solid var(--stack-color, var(--color-accent));
+
+  outline-offset: 2px;
+}
+
+.projects_filter svg {
+  color: var(--stack-color, var(--color-accent));
+}
+
+.projects_filter_active,
+.projects_filter_active:hover {
+  border-color: var(--stack-color, var(--color-accent));
+
+  background-color: var(--stack-color, var(--color-accent));
+
+  color: var(--color-on-accent);
+}
+
+
+/* =========================================================
+   FAMILLES DE TECHNOLOGIES (EN-TÊTE DE CARTE)
+   ========================================================= */
+
+.project_stack {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 0.4rem;
+
+  margin: 0.6rem 0 0;
+
+  padding: 0;
+
+  list-style: none;
+}
+
+.projects_filter_active svg {
+  color: inherit;
+}
+
+.project_stack_item {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 0.35rem;
+
+  padding: 0.2rem 0.6rem;
+
+  border-radius: var(--radius-pill);
+
+  background-color: color-mix(
+    in srgb,
+    var(--stack-color, var(--color-accent)) 14%,
+    transparent
+  );
+
+  font-size: 0.8rem;
+
+  font-weight: 600;
+
+  color: var(--stack-color, var(--color-accent));
+}
+
+
+/* =========================================================
+   COULEUR PAR FAMILLE
+   ========================================================= */
+
+[data-stack='PHP'] {
+  --stack-color: var(--stack-php);
+}
+
+[data-stack='Python'] {
+  --stack-color: var(--stack-python);
+}
+
+[data-stack='Java'] {
+  --stack-color: var(--stack-java);
+}
+
+[data-stack='Flutter'] {
+  --stack-color: var(--stack-flutter);
+}
+
+[data-stack='Vue.js'] {
+  --stack-color: var(--stack-vue);
+}
+
+.project[data-stack] {
+  border-top: 3px solid var(--stack-color, var(--color-border));
+}
+
+
+/* =========================================================
+   CAPTURES D'ÉCRAN
+   ========================================================= */
+
+.project_shots {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+
+  gap: 0.75rem;
+
+  margin: 0 0 1.5rem;
+
+  padding: 0;
+
+  list-style: none;
+}
+
+.project_shot {
+  position: relative;
+
+  display: block;
+
+  width: 100%;
+
+  padding: 0;
+
+  overflow: hidden;
+
+  border: 1px solid var(--color-border);
+
+  border-radius: var(--radius-small);
+
+  background-color: var(--color-bg-secondary);
+
+  cursor: zoom-in;
+
+  transition: border-color var(--transition-fast);
+}
+
+.project_shot:hover,
+.project_shot:focus-visible {
+  border-color: var(--color-accent);
+}
+
+.project_shot:focus-visible {
+  outline: 2px solid var(--color-accent);
+
+  outline-offset: 2px;
+}
+
+.project_shot img {
+  display: block;
+
+  width: 100%;
+
+  aspect-ratio: 16 / 10;
+
+  object-fit: cover;
+
+  object-position: top left;
+}
+
+.project_shot_icon {
+  position: absolute;
+
+  right: 0.5rem;
+  bottom: 0.5rem;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 2rem;
+  height: 2rem;
+
+  border-radius: var(--radius-small);
+
+  background-color: var(--color-accent);
+
+  color: var(--color-on-accent);
+
+  opacity: 0;
+
+  transition: opacity var(--transition-fast);
+}
+
+.project_shot:hover .project_shot_icon,
+.project_shot:focus-visible .project_shot_icon {
+  opacity: 1;
+}
+
+
+/* =========================================================
+   CAPTURE AGRANDIE
+   ========================================================= */
+
+.lightbox {
+  width: min(92vw, 70rem);
+
+  max-height: 92vh;
+
+  margin: auto;
+
+  padding: 1rem;
+
+  border: 1px solid var(--color-border);
+
+  border-radius: var(--radius-medium);
+
+  background-color: var(--color-card);
+
+  color: var(--color-text);
+}
+
+.lightbox::backdrop {
+  background-color: rgba(8, 12, 20, 0.78);
+}
+
+.lightbox_figure {
+  margin: 0 0 1rem;
+}
+
+.lightbox_image {
+  display: block;
+
+  width: 100%;
+
+  max-height: 72vh;
+
+  object-fit: contain;
+}
+
+.lightbox_caption {
+  margin-top: 0.75rem;
+
+  font-size: 0.925rem;
+
+  color: var(--color-text-secondary);
+}
+
+.lightbox_close {
+  margin-left: auto;
+}

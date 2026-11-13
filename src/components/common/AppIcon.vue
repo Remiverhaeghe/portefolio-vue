@@ -20,6 +20,16 @@ import {
   Database,
   Compass,
   Smartphone,
+  TrainFront,
+  FlaskConical,
+  Gauge,
+  FolderGit2,
+  Maximize2,
+  Terminal,
+  Coffee,
+  Server,
+  LayoutTemplate,
+  X,
 } from 'lucide-vue-next'
 
 const icons = {
@@ -43,6 +53,16 @@ const icons = {
   database: Database,
   compass: Compass,
   mobile: Smartphone,
+  train: TrainFront,
+  flask: FlaskConical,
+  gauge: Gauge,
+  folders: FolderGit2,
+  expand: Maximize2,
+  terminal: Terminal,
+  coffee: Coffee,
+  server: Server,
+  layout: LayoutTemplate,
+  close: X,
 }
 
 defineProps({
