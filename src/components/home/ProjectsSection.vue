@@ -220,6 +220,7 @@ const {
                 <button
                   type="button"
                   class="project_shot"
+                  :class="{ 'project_shot--portrait': image.portrait }"
                   :aria-label="`Agrandir la capture : ${image.alt}`"
                   @click="openImage(image)"
                 >
