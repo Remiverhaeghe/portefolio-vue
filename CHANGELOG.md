@@ -2,6 +2,9 @@
 
 ## Non publié
 
+### Maintenance
+- Dependabot : `oxlint` et `eslint-plugin-oxlint` mis à jour ensemble, versions mineures regroupées en une seule pull request
+
 ### Contenu
 - Présentation réécrite à la première personne
 - Parcours complété avec la formation Foreach Academy et la mission en intérim à la SNCF, dates corrigées
