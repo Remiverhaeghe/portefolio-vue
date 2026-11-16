@@ -170,6 +170,53 @@ export const projects = [
   }),
 
   new Project({
+    title: 'Atelier : application Android de travaux',
+
+    context:
+      'Préparer les travaux de ma maison sans erreur de coupe ni de quantité : parquet, plinthes, peinture, carrelage, placo, électricité, plomberie.',
+
+    problem:
+      'Les calculs de chantier se refont à la main pièce par pièce, et une erreur de coupe ou de commande se paie en matériau et en allers-retours au magasin.',
+
+    solution:
+      'Application Flutter hors ligne : chaque pièce est saisie mur par mur, l’application en tire le plan, les coupes, les quantités, le budget et la liste de courses. Elle n’a pas la permission Internet, tout reste sur le téléphone.',
+
+    contribution:
+      'Projet personnel, conçu, développé et testé seul, à partir de mes propres travaux.',
+
+    technologies: ['Flutter', 'Dart', 'GitHub Actions'],
+
+    highlights: [
+      'Règles de calcul en Dart pur, séparées de l’interface, couvertes à plus de 95 % et contrôlées en intégration continue.',
+      'Plan de pose du parquet rangée par rangée, coupes de plinthes optimisées par barre, vue 3D et export pour Home Assistant.',
+      'Plus de 400 tests, parcours sur émulateur Android et captures d’écran générées sur un chantier fictif.',
+      'APK signées jointes à chaque version publiée sur GitHub.',
+    ],
+
+    githubUrl: 'https://github.com/Remiverhaeghe/atelier',
+
+    stack: ['Flutter'],
+
+    images: [
+      {
+        src: `${import.meta.env.BASE_URL}images/projects/atelier-02-chantier.png`,
+        portrait: true,
+        alt: 'Écran d’un chantier dans Atelier : surface, budget et pièces',
+      },
+      {
+        src: `${import.meta.env.BASE_URL}images/projects/atelier-05-pose.png`,
+        portrait: true,
+        alt: 'Plan de pose du parquet rangée par rangée',
+      },
+      {
+        src: `${import.meta.env.BASE_URL}images/projects/atelier-11-peinture.png`,
+        portrait: true,
+        alt: 'Calcul de la peinture d’une pièce',
+      },
+    ],
+  }),
+
+  new Project({
     title: 'Portfolio personnel',
 
     context:

@@ -2,6 +2,10 @@
 
 ## Non publié
 
+### Projets
+- Ajout d'Atelier, application Android de travaux en Flutter, avec trois captures en hauteur (nouvelle option `portrait` des images)
+- Chiffres clés : 6 projets publics présentés
+
 ### Maintenance
 - Dependabot : `oxlint` et `eslint-plugin-oxlint` mis à jour ensemble, versions mineures regroupées en une seule pull request
 
