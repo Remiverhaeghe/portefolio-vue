@@ -8,6 +8,17 @@ updates:
       prefix: "chore"
     cooldown:
       default-days: 7
+    groups:
+      # oxlint et son greffon ESLint doivent avoir la même version : proposés séparément, aucun ne s'installe
+      oxlint:
+        patterns:
+          - "oxlint"
+          - "eslint-plugin-oxlint"
+      # Une seule pull request pour les versions mineures, pour éviter les conflits sur package-lock.json
+      mineures:
+        update-types:
+          - "minor"
+          - "patch"
 
   - package-ecosystem: github-actions
     directory: /
