@@ -760,6 +760,15 @@
   object-position: top left;
 }
 
+/* Capture de téléphone : écran entier, en hauteur, plutôt que rognée en paysage. */
+.project_shot--portrait img {
+  aspect-ratio: 9 / 16;
+
+  object-fit: contain;
+
+  object-position: top center;
+}
+
 .project_shot_icon {
   position: absolute;
 
