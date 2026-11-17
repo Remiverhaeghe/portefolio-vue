@@ -217,6 +217,43 @@ export const projects = [
   }),
 
   new Project({
+    title: 'Cursus : suivi des compétences d’apprentis',
+
+    context:
+      'Suivre la progression d’un apprenti entre l’école, l’entreprise d’accueil et l’apprenti lui-même, sur un référentiel de blocs et de compétences.',
+
+    problem:
+      'Les évaluations de l’école et du tuteur sont dispersées : personne ne voit d’un coup d’œil ce qui est acquis et ce qui reste à valider.',
+
+    solution:
+      'Application web Symfony à trois profils. L’école gère les formations, les promotions et les contrats, le tuteur évalue ses apprentis en entreprise, l’apprenti consulte sa progression. Chaque évaluation est datée et rien n’est écrasé : l’historique donne la courbe de chaque compétence.',
+
+    contribution:
+      'Projet personnel écrit de zéro à partir d’un besoin fonctionnel, avec des données fictives uniquement.',
+
+    technologies: [
+      'PHP 8.5',
+      'Symfony 8',
+      'PostgreSQL',
+      'FrankenPHP',
+      'Docker',
+      'PHPUnit',
+      'GitHub Actions',
+    ],
+
+    highlights: [
+      'Accès aux données par voters Symfony, avec un test pour chaque couple de profil et de donnée.',
+      'Calcul de la progression isolé de la base de données et testé seul.',
+      'Double authentification TOTP pour l’école et les tuteurs, mots de passe en Argon2id, CSP avec nonce, export et suppression de son compte.',
+      'PHPStan, PHP-CS-Fixer, tests de mutation Infection et recherche de secrets en intégration continue.',
+    ],
+
+    githubUrl: 'https://github.com/Remiverhaeghe/cursus',
+
+    stack: ['PHP'],
+  }),
+
+  new Project({
     title: 'Portfolio personnel',
 
     context:
