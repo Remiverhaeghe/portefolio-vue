@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>Page introuvable — Rémi Verhaeghe</title>
+    <link rel="icon" href="/portefolio-vue/favicon.ico">
+    <!-- Page servie par GitHub Pages pour toute adresse inconnue : hors de Vite, donc chemins écrits en entier -->
+    <style>
+      :root {
+        --fond: #ffffff;
+        --texte: #0f172a;
+        --texte-second: #475569;
+        --accent: #0b7a5a;
+        --sur-accent: #ffffff;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --fond: #0f172a;
+          --texte: #f8fafc;
+          --texte-second: #cbd5e1;
+          --accent: #34d399;
+          --sur-accent: #0f172a;
+        }
+      }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        padding: 16px;
+        box-sizing: border-box;
+        background: var(--fond);
+        color: var(--texte);
+        font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      }
+      main {
+        max-width: 34rem;
+      }
+      h1 {
+        font-size: 1.75rem;
+        margin: 0 0 0.75rem;
+      }
+      p {
+        color: var(--texte-second);
+        line-height: 1.6;
+        margin: 0 0 1.5rem;
+      }
+      a {
+        display: inline-block;
+        padding: 0.7rem 1.2rem;
+        border-radius: 8px;
+        background: var(--accent);
+        color: var(--sur-accent);
+        font-weight: 600;
+        text-decoration: none;
+      }
+      a:focus-visible {
+        outline: 3px solid var(--texte);
+        outline-offset: 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Cette page n’existe pas</h1>
+      <p>L’adresse est peut-être mal tapée, ou la page a été déplacée. Le portfolio tient sur une seule page : projets, parcours et compétences.</p>
+      <a href="/portefolio-vue/">Revenir au portfolio</a>
+    </main>
+  </body>
+</html>

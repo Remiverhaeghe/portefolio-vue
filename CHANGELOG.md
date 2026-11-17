@@ -2,6 +2,9 @@
 
 ## Non publié
 
+### Navigation
+- Page « introuvable » pour les adresses inconnues, claire ou sombre selon le système, avec un lien vers le portfolio
+
 ### Projets
 - Ajout d'Atelier, application Android de travaux en Flutter, avec trois captures en hauteur (nouvelle option `portrait` des images)
 - Chiffres clés : 6 projets publics présentés
