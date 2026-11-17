@@ -4,7 +4,7 @@
 
 ### Projets
 - Ajout d'Atelier, application Android de travaux en Flutter, avec trois captures en hauteur (nouvelle option `portrait` des images)
-- Ajout de Cursus, suivi des compétences d'apprentis en Symfony
+- Ajout de Cursus, projet de fin d'études : suivi des compétences d'apprentis en Symfony
 - Chiffres clés : 7 projets publics présentés, avec un test qui vérifie que ce nombre suit la liste des projets
 
 ### Maintenance

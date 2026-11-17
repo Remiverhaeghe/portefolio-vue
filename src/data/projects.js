@@ -229,7 +229,7 @@ export const projects = [
       'Application web Symfony à trois profils. L’école gère les formations, les promotions et les contrats, le tuteur évalue ses apprentis en entreprise, l’apprenti consulte sa progression. Chaque évaluation est datée et rien n’est écrasé : l’historique donne la courbe de chaque compétence.',
 
     contribution:
-      'Projet personnel écrit de zéro à partir d’un besoin fonctionnel, avec des données fictives uniquement.',
+      'Projet de fin d’études, conçu et développé seul, écrit de zéro à partir d’un besoin fonctionnel, avec des données fictives uniquement.',
 
     technologies: [
       'PHP 8.5',
