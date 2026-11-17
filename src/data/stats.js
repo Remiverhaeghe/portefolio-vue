@@ -23,7 +23,7 @@ export const stats = [
     label: 'd’indice de mutation, qui prouve que les tests détectent les erreurs',
   }),
   new Stat({
-    value: '6',
+    value: '7',
     icon: 'folders',
     label: 'projets publics sur GitHub, présentés plus bas',
   }),

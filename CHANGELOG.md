@@ -4,7 +4,8 @@
 
 ### Projets
 - Ajout d'Atelier, application Android de travaux en Flutter, avec trois captures en hauteur (nouvelle option `portrait` des images)
-- Chiffres clés : 6 projets publics présentés
+- Ajout de Cursus, projet de fin d'études : suivi des compétences d'apprentis en Symfony
+- Chiffres clés : 7 projets publics présentés, avec un test qui vérifie que ce nombre suit la liste des projets
 
 ### Maintenance
 - Dependabot : `oxlint` et `eslint-plugin-oxlint` mis à jour ensemble, versions mineures regroupées en une seule pull request
