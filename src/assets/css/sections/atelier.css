@@ -1,0 +1,282 @@
+/**
+ * Section Croquis.
+ *
+ * Reprend l'habillage d'Atelier : feuille quadrillée, fiches tenues
+ * par un ruban adhésif, légendes écrites à la main.
+ */
+
+
+/* =========================================================
+   SECTION
+   ========================================================= */
+
+.atelier {
+  --atelier-grid: rgba(11, 122, 90, 0.09);
+  --atelier-tape: rgba(234, 205, 120, 0.75);
+  --atelier-paper: #fffdf8;
+
+  padding-block: 6rem;
+
+  background-color: var(--color-bg-secondary);
+
+  transition:
+    background-color var(--transition-slow);
+}
+
+[data-theme="dark"] .atelier {
+  --atelier-grid: rgba(148, 163, 184, 0.08);
+  --atelier-tape: rgba(202, 170, 90, 0.55);
+  --atelier-paper: var(--color-card);
+}
+
+
+/* =========================================================
+   INTRODUCTION
+   ========================================================= */
+
+.atelier_intro {
+  max-width: 52rem;
+
+  margin: -1.25rem 0 2.5rem;
+}
+
+.atelier_text {
+  font-size: 1rem;
+
+  line-height: 1.8;
+
+  color: var(--color-text-secondary);
+}
+
+.atelier_points {
+  display: grid;
+
+  gap: 0.5rem;
+
+  margin-top: 1rem;
+
+  padding-left: 1.25rem;
+
+  color: var(--color-text-secondary);
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   FEUILLE QUADRILLÉE
+   ========================================================= */
+
+.atelier_sheet {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fill, minmax(12.5rem, 1fr));
+
+  gap: 2.5rem 1.75rem;
+
+  padding: 2.5rem 2rem;
+
+  border: 1px solid var(--color-border);
+
+  border-radius: var(--radius-large);
+
+  list-style: none;
+
+  background-color: var(--color-bg);
+
+  background-image:
+    linear-gradient(var(--atelier-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--atelier-grid) 1px, transparent 1px);
+
+  background-size: 1.25rem 1.25rem;
+}
+
+
+/* =========================================================
+   FICHE
+   ========================================================= */
+
+.atelier_card {
+  position: relative;
+
+  padding: 0.75rem 0.75rem 1rem;
+
+  background-color: var(--atelier-paper);
+
+  box-shadow:
+    0 1px 2px var(--color-shadow),
+    0 8px 20px var(--color-shadow);
+
+  opacity: 0;
+
+  transform: translateY(16px) rotate(var(--atelier-tilt, -0.6deg));
+
+  transition:
+    opacity 0.6s ease var(--atelier-delay),
+    transform 0.6s ease var(--atelier-delay);
+}
+
+.atelier_card:nth-child(even) {
+  --atelier-tilt: 0.7deg;
+}
+
+.atelier_card:nth-child(3n) {
+  --atelier-tilt: -0.3deg;
+}
+
+.section_visible .atelier_card {
+  opacity: 1;
+
+  transform: rotate(var(--atelier-tilt, -0.6deg));
+}
+
+/* Ruban adhésif qui tient la fiche sur la feuille */
+.atelier_card::before {
+  content: "";
+
+  position: absolute;
+
+  top: -0.6rem;
+  left: 50%;
+
+  width: 4.5rem;
+  height: 1.25rem;
+
+  background-color: var(--atelier-tape);
+
+  transform: translateX(-50%) rotate(-2deg);
+}
+
+
+/* =========================================================
+   CAPTURE
+   ========================================================= */
+
+.atelier_shot {
+  display: block;
+
+  width: 100%;
+
+  padding: 0;
+
+  border: 1px solid var(--color-border);
+
+  background: none;
+
+  cursor: zoom-in;
+}
+
+.atelier_shot:focus-visible {
+  outline: 2px solid var(--color-accent);
+
+  outline-offset: 3px;
+}
+
+.atelier_shot img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  aspect-ratio: 1080 / 2340;
+
+  object-fit: cover;
+
+  object-position: top;
+}
+
+
+/* =========================================================
+   LÉGENDE ÉCRITE À LA MAIN
+   ========================================================= */
+
+.atelier_card_title {
+  margin-top: 0.75rem;
+
+  font-family: "Caveat", "Segoe Print", "Bradley Hand", "Comic Neue", cursive;
+
+  font-size: 1.35rem;
+
+  line-height: 1.2;
+
+  color: var(--color-accent);
+}
+
+.atelier_card_caption {
+  margin-top: 0.25rem;
+
+  font-size: 0.875rem;
+
+  line-height: 1.55;
+
+  color: var(--color-text-secondary);
+}
+
+
+/* =========================================================
+   SOURCE
+   ========================================================= */
+
+.atelier_source {
+  max-width: 52rem;
+
+  margin-top: 2rem;
+
+  font-size: 0.925rem;
+
+  line-height: 1.7;
+
+  color: var(--color-text-muted);
+}
+
+.atelier_link {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 0.4rem;
+
+  margin-left: 0.25rem;
+
+  color: var(--color-accent);
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   PETITS ÉCRANS : une rangée qui défile au doigt
+   ========================================================= */
+
+@media (max-width: 640px) {
+  .atelier_sheet {
+    grid-template-columns: none;
+
+    grid-auto-flow: column;
+
+    grid-auto-columns: 70%;
+
+    overflow-x: auto;
+
+    scroll-snap-type: x mandatory;
+
+    padding: 2rem 1rem;
+  }
+
+  .atelier_card {
+    scroll-snap-align: center;
+  }
+}
+
+
+/* =========================================================
+   MOUVEMENT RÉDUIT
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .atelier_card {
+    opacity: 1;
+
+    transition: none;
+  }
+}

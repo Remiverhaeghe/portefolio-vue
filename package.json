@@ -5,6 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "captures": "node scripts/captures-atelier.mjs",
+    "prebuild": "npm run captures",
     "build": "vite build",
     "preview": "vite preview",
     "test": "vitest run",

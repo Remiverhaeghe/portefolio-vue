@@ -37,3 +37,6 @@ __screenshots__/
 
 # Vite
 *.timestamp-*-*.mjs
+
+# Captures d'Atelier recopiées avant le build (scripts/captures-atelier.mjs)
+src/assets/captures/

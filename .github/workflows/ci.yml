@@ -5,6 +5,9 @@ on:
     branches: [main]
   pull_request:
   workflow_dispatch:
+  # Republie chaque jour pour reprendre les dernières captures d'Atelier
+  schedule:
+    - cron: '17 5 * * *'
 
 permissions:
   contents: read
@@ -33,16 +36,17 @@ jobs:
 
       - run: npm test
 
+      # « prebuild » recopie d'abord les captures de docs/captures du dépôt Atelier
       - name: Build
         run: npm run build -- --base=/portefolio-vue/
 
-      - if: github.event_name == 'push'
+      - if: github.event_name == 'push' || github.event_name == 'schedule'
         uses: actions/upload-pages-artifact@v5
         with:
           path: dist
 
   deploy:
-    if: github.event_name == 'push'
+    if: github.event_name == 'push' || github.event_name == 'schedule'
     needs: build
     runs-on: ubuntu-latest
 
