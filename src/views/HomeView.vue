@@ -5,6 +5,7 @@ import AboutSection from '@/components/home/AboutSection.vue'
 import ExperienceSection from '@/components/home/ExperienceSection.vue'
 import SkillsSection from '@/components/home/SkillsSection.vue'
 import ProjectsSection from '@/components/home/ProjectsSection.vue'
+import AtelierSection from '@/components/home/AtelierSection.vue'
 import ContactSection from '@/components/home/ContactSection.vue'
 
 /**
@@ -18,6 +19,7 @@ const sections = [
   ExperienceSection,
   SkillsSection,
   ProjectsSection,
+  AtelierSection,
   ContactSection,
 ]
 </script>

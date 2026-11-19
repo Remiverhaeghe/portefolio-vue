@@ -1,4 +1,6 @@
 import { Project } from '@/models/Project.js'
+import { capturesCarte } from '@/data/atelierCarnet.js'
+import { capturesDisponibles, indexCapturesAtelier } from '@/utils/captures.js'
 
 /**
  * Projets présentés dans le portfolio.
@@ -197,23 +199,12 @@ export const projects = [
 
     stack: ['Flutter'],
 
-    images: [
-      {
-        src: `${import.meta.env.BASE_URL}images/projects/atelier-02-chantier.png`,
-        portrait: true,
-        alt: 'Écran d’un chantier dans Atelier : surface, budget et pièces',
-      },
-      {
-        src: `${import.meta.env.BASE_URL}images/projects/atelier-05-pose.png`,
-        portrait: true,
-        alt: 'Plan de pose du parquet rangée par rangée',
-      },
-      {
-        src: `${import.meta.env.BASE_URL}images/projects/atelier-11-peinture.png`,
-        portrait: true,
-        alt: 'Calcul de la peinture d’une pièce',
-      },
-    ],
+    // Recopiées du dépôt Atelier avant chaque build (scripts/captures-atelier.mjs)
+    images: capturesDisponibles(capturesCarte, indexCapturesAtelier).map((pCapture) => ({
+      src: pCapture.src,
+      alt: pCapture.alt,
+      portrait: true,
+    })),
   }),
 
   new Project({

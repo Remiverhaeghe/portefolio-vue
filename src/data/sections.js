@@ -36,6 +36,12 @@ export const sections = {
     anchor: 'projets',
   }),
 
+  atelier: new Section({
+    key: 'atelier',
+    title: 'Croquis',
+    anchor: 'croquis',
+  }),
+
   contact: new Section({
     key: 'contact',
     title: 'Contact',

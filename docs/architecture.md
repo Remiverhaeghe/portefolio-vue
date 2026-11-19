@@ -28,6 +28,7 @@ src/
 │   └── home/                 Une section de la page par composant (StatsSection sans ancre)
 ├── composables/              useActiveSection, useScrollReveal, useTheme
 ├── data/                     Contenu du site
+├── utils/                    captures.js : captures d'Atelier recopiées au build
 ├── models/                   Experience, Profile, Project, Section, Skill, SkillCategory, Stat
 │   └── __tests__/
 └── views/
