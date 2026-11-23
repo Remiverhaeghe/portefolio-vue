@@ -63,6 +63,21 @@ export const capturesCarnet = [
     titre: 'Finitions du bois',
     legende: 'Une coupe montre le film posé dessus ou la finition qui entre dans le bois.',
   },
+  {
+    nom: '56-dessin-piece',
+    titre: 'Pièce en L dessinée',
+    legende: 'Murs numérotés, coins lettrés ; le mur déduit des autres reste à mesurer.',
+  },
+  {
+    nom: '57-mezzanine-en-l',
+    titre: 'Mezzanine en L',
+    legende: 'Son contour en tirets sur le plan, le coin découpé laissé à l’escalier.',
+  },
+  {
+    nom: '58-suivi-humidite',
+    titre: 'Humidité jour après jour',
+    legende: 'Relevés du thermo-hygromètre, la date des travaux marquée, avant et après comparés.',
+  },
 ]
 
 // Texte de la section.

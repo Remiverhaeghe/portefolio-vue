@@ -223,6 +223,9 @@ export const projects = [
 
     githubUrl: 'https://github.com/Remiverhaeghe/atelier',
 
+    // Version web publiée par la CI d'Atelier sur GitHub Pages
+    liveUrl: 'https://remiverhaeghe.github.io/atelier/',
+
     stack: ['Flutter'],
 
     // Recopiées du dépôt Atelier avant chaque build (scripts/captures-atelier.mjs)
