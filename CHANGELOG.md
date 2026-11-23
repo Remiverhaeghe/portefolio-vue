@@ -2,6 +2,12 @@
 
 ## Non publié
 
+### Projets à jour
+- Tremplin remplace l'ancien « Scraper de données » (dépôt renommé) : application mobile hors ligne avec les 944 questions livrées, univers de la piscine, révision à la voix, version web pour l'iPhone ; trois captures du tableau de bord sur des données fictives
+- Atelier : pièce dessinée d'après une forme avec murs déduits, fiche PDF de la pièce, suivi de l'humidité avant et après travaux, version web hors ligne
+- Kalkul : devises hors ligne, historique cherchable et exportable, capture de l'onglet Historique
+- nas-monitor : santé des disques (SMART)
+
 ### Croquis d'Atelier
 - Nouvelle section « Croquis » : les écrans d'Atelier en carnet de chantier (pièce sous rampants, fenêtre bois, faux plafond, placard, lexique, geste, finitions), posés sur une feuille quadrillée et ouverts en grand au clic
 - Captures d'Atelier recopiées automatiquement avant chaque build depuis `docs/captures/` de son dépôt public (`npm run captures`), au lieu de copies versionnées ; la carte du projet les utilise aussi
