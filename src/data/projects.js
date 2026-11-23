@@ -7,10 +7,10 @@ import { capturesDisponibles, indexCapturesAtelier } from '@/utils/captures.js'
  */
 export const projects = [
   new Project({
-    title: 'Scraper de données en Python',
+    title: 'Tremplin : recherche d’emploi et révision des entretiens',
 
     context:
-      'Collecte et analyse d’offres d’emploi publiques, avec une architecture découpée en couches : HTTP, parsing, extraction, métier et stockage.',
+      'Collecte et analyse d’offres d’emploi publiques, suivi des candidatures et préparation des entretiens, avec une architecture découpée en couches : HTTP, parsing, extraction, métier et stockage.',
 
     problem:
       'Les offres sont réparties entre plusieurs API d’emploi aux formats différents, et elles se périment vite : les suivre à la main n’est pas tenable.',
@@ -35,16 +35,33 @@ export const projects = [
 
     highlights: [
       'Tableau de bord web FastAPI (Jinja2, HTMX) et interface de bureau PySide6.',
-      'Application mobile Flutter compagnon, hors ligne d’abord, synchronisée via une API à jeton.',
+      'Application mobile Flutter compagnon, hors ligne d’abord : 944 questions livrées pour réviser sans le PC, synchronisation par une API à jeton, connexion par un code à 6 chiffres.',
+      'Révision dans l’univers de la piscine : profondeur de chaque thème, bilan du plongeon, carnet de la semaine, révision à la voix et widget « 5 min ».',
+      'Version web installable sur l’iPhone ; le code propre à Android (notifications, widget, SQLite) est séparé par plate-forme.',
       'Stockage SQLite et analyse des données avec pandas.',
       'Tests pytest et Playwright, intégration continue avec analyse statique, audit de sécurité et des dépendances.',
     ],
 
-    githubUrl: 'https://github.com/Remiverhaeghe/scraper-data-python',
+    githubUrl: 'https://github.com/Remiverhaeghe/tremplin',
 
     featured: true,
 
     stack: ['Python', 'Flutter'],
+
+    images: [
+      {
+        src: `${import.meta.env.BASE_URL}images/projects/tremplin-tableau-de-bord.png`,
+        alt: 'Tableau de bord web de Tremplin, sur des données fictives',
+      },
+      {
+        src: `${import.meta.env.BASE_URL}images/projects/tremplin-offres.png`,
+        alt: 'Liste des offres d’emploi de Tremplin, sur des données fictives',
+      },
+      {
+        src: `${import.meta.env.BASE_URL}images/projects/tremplin-marche.png`,
+        alt: 'Page Mon marché : salaire médian et compétences à travailler, sur des données fictives',
+      },
+    ],
   }),
 
   new Project({
@@ -75,6 +92,7 @@ export const projects = [
     highlights: [
       'Moniteurs de sauvegardes (heartbeat), de sites, de ports, de certificats, de DNS et de ping, avec dépendances entre services et fenêtres de maintenance.',
       'Page de statut publique, courbes de tendance, détection de résultats anormaux et API en lecture seule pour une application mobile.',
+      'Santé des disques du NAS (SMART) : température, secteurs réalloués, usure NVMe, avec une alerte avant la panne.',
       'Sécurité : double authentification TOTP chiffrée, jetons d’API hachés, en-têtes CSP, journal des actions, recherche de secrets en CI.',
       'Plus de 270 tests (unitaires, fonctionnels, navigateur Panther) avec 99 % de couverture des lignes.',
       'Tests de mutation Infection : un indice de 96 %, qui vérifie que les tests détectent vraiment une modification du code, avec PHPStan et PHP-CS-Fixer en intégration continue.',
@@ -147,7 +165,8 @@ export const projects = [
     highlights: [
       'Calcul scientifique (trigonométrie, logarithmes, factorielle) en degrés ou en radians.',
       'Calcul financier : intérêts, mensualités et tableau d’amortissement, VAN, TRI.',
-      'Tracé de fonctions avec tangente, dérivée, intégrale et aire ; matrices, systèmes d’équations, régression linéaire.',
+      'Tracé de fonctions avec tangente, dérivée, intégrale et aire ; matrices, systèmes d’équations, régression linéaire avec nuage de points.',
+      'Onglets Programmeur (bases 2 à 16) et Chantier (béton, pente, revêtement), devises hors ligne et historique cherchable, exportable en CSV.',
       'Tests JUnit 5 lancés avec Maven.',
     ],
 
@@ -167,6 +186,10 @@ export const projects = [
       {
         src: `${import.meta.env.BASE_URL}images/projects/kalkul-scientifique.png`,
         alt: 'Onglet Scientifique de Kalkul : fonctions trigonométriques, logarithmes et factorielle',
+      },
+      {
+        src: `${import.meta.env.BASE_URL}images/projects/kalkul-historique.png`,
+        alt: 'Onglet Historique de Kalkul : les derniers calculs, à reprendre d’un double-clic',
       },
     ],
   }),
@@ -191,6 +214,9 @@ export const projects = [
     highlights: [
       'Règles de calcul en Dart pur, séparées de l’interface, couvertes à plus de 95 % et contrôlées en intégration continue.',
       'Plan de pose du parquet rangée par rangée, coupes de plinthes optimisées par barre, vue 3D et export pour Home Assistant.',
+      'Pièce dessinée d’après une forme (rectangle, L, T) : les murs non mesurés sont déduits et rappelés sur le chantier, les angles se calculent par la diagonale, et une fiche PDF reprend le plan coté et les reprises.',
+      'Relevés d’un thermo-hygromètre analysés et suivis jour par jour, avant et après travaux.',
+      'Version web installable sur l’iPhone, qui fonctionne hors ligne.',
       'Plus de 400 tests, parcours sur émulateur Android et captures d’écran générées sur un chantier fictif.',
       'APK signées jointes à chaque version publiée sur GitHub.',
     ],
