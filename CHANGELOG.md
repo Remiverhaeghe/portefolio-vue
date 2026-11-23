@@ -2,6 +2,9 @@
 
 ## Non publié
 
+### CI
+- Captures du site construit (bureau clair, bureau sombre, téléphone) à chaque passage, publiées en artefact ; une erreur de script dans la page fait échouer la CI
+
 ### secrets-audit
 - Une capture du rapport sur la carte secrets-audit, prise sur un dépôt fictif (valeurs masquées par l'outil)
 
