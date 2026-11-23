@@ -1,0 +1,87 @@
+/**
+ * Frise chronologique du parcours : une barre par expérience sur un axe d'années, les périodes qui se
+ * chevauchent sur des couloirs séparés. Chaque barre mène à la carte de l'expérience.
+ */
+
+.frise {
+  margin: 0 0 3.5rem;
+}
+
+.frise_piste {
+  --frise-hauteur-barre: 2.25rem;
+  --frise-ecart: 0.5rem;
+
+  position: relative;
+  height: calc(
+    (var(--frise-couloirs) * var(--frise-hauteur-barre)) +
+      ((var(--frise-couloirs) - 1) * var(--frise-ecart))
+  );
+}
+
+.frise_barre {
+  position: absolute;
+  top: calc(var(--frise-couloir) * (var(--frise-hauteur-barre) + var(--frise-ecart)));
+  box-sizing: border-box;
+  height: var(--frise-hauteur-barre);
+  padding-inline: 0.5rem;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+
+  border: 1px solid var(--color-accent);
+  border-radius: 0.5rem;
+  background-color: var(--color-accent-soft);
+  color: var(--color-text);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  white-space: nowrap;
+  text-decoration: none;
+
+  transition:
+    background-color var(--transition-slow),
+    color var(--transition-slow);
+}
+
+.frise_barre:hover,
+.frise_barre:focus-visible {
+  background-color: var(--color-accent);
+  color: var(--color-on-accent);
+}
+
+.frise_barre:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Une formation se distingue par un trait pointillé, pas seulement par la couleur */
+.frise_barre_formation {
+  border-style: dashed;
+}
+
+.frise_nom {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.frise_axe {
+  position: relative;
+  height: 1.5rem;
+  margin: 0.5rem 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--color-border);
+}
+
+.frise_annee {
+  position: absolute;
+  top: 0.25rem;
+  color: var(--color-text-muted);
+  font-size: 0.75rem;
+}
+
+@media (max-width: 640px) {
+  .frise_barre {
+    padding-inline: 0.25rem;
+    font-size: 0.6875rem;
+  }
+}
