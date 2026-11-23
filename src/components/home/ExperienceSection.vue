@@ -3,6 +3,7 @@ import { experiences } from '@/data/experiences.js'
 import { sections } from '@/data/sections.js'
 import SectionTitle from '@/components/common/SectionTitle.vue'
 import AppIcon from '@/components/common/AppIcon.vue'
+import ExperienceTimeline from '@/components/home/ExperienceTimeline.vue'
 import { useScrollReveal } from '@/composables/useScrollReveal.js'
 
 const {
@@ -35,6 +36,13 @@ const {
 
 
       <!-- =================================================
+           FRISE CHRONOLOGIQUE
+           ================================================= -->
+
+      <ExperienceTimeline :experiences="experiences" />
+
+
+      <!-- =================================================
            TIMELINE
            ================================================= -->
 
@@ -42,6 +50,7 @@ const {
 
         <article
           v-for="(experience, index) in experiences"
+          :id="`experience-${index}`"
           :key="`${experience.company}-${experience.title}`"
           class="experience_item"
           :class="{

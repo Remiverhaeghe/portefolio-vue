@@ -2,6 +2,9 @@
 
 ## Non publié
 
+### Parcours
+- Frise chronologique au-dessus des cartes d'expérience : une barre par expérience sur un axe d'années, les périodes qui se chevauchent sur des couloirs séparés, la formation en pointillé ; chaque barre mène à la carte (`src/data/timeline.js`, `ExperienceTimeline.vue`). Elle se construit à partir des périodes de `experiences.js` : une expérience ajoutée y apparaît seule
+
 ### secrets-audit
 - Une capture du rapport sur la carte secrets-audit, prise sur un dépôt fictif (valeurs masquées par l'outil)
 
