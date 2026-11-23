@@ -61,6 +61,16 @@ export const projects = [
         src: `${import.meta.env.BASE_URL}images/projects/tremplin-marche.png`,
         alt: 'Page Mon marché : salaire médian et compétences à travailler, sur des données fictives',
       },
+      {
+        src: `${import.meta.env.BASE_URL}images/projects/tremplin-mobile-bilan-plongee.png`,
+        alt: 'Appli mobile : bilan d’une série dans le thème Docker, avec la profondeur gagnée',
+        portrait: true,
+      },
+      {
+        src: `${import.meta.env.BASE_URL}images/projects/tremplin-mobile-carnet-plongee.png`,
+        alt: 'Appli mobile : carnet de plongée de la semaine, sur des données fictives',
+        portrait: true,
+      },
     ],
   }),
 
