@@ -40,3 +40,5 @@ __screenshots__/
 
 # Captures d'Atelier recopiées avant le build (scripts/captures-atelier.mjs)
 src/assets/captures/
+# Captures du site prises par la CI (scripts/captures-site.mjs)
+captures/
