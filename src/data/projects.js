@@ -277,6 +277,26 @@ export const projects = [
       'Calcul de la progression isolé de la base de données et testé seul.',
       'Double authentification TOTP pour l’école et les tuteurs, mots de passe en Argon2id, CSP avec nonce, export et suppression de son compte.',
       'PHPStan, PHP-CS-Fixer, tests de mutation Infection et recherche de secrets en intégration continue.',
+      'Un visuel propre : un livret d’apprentissage, avec papier craie, encre verte, tampons de niveau et titres en serif.',
+    ],
+
+    images: [
+      {
+        src: `${import.meta.env.BASE_URL}images/projects/cursus-progression.png`,
+        alt: 'Progression d’un apprenti par bloc et par compétence, avec les niveaux en tampons, sur des données fictives',
+      },
+      {
+        src: `${import.meta.env.BASE_URL}images/projects/cursus-ecole.png`,
+        alt: 'Tableau de bord de l’école : progression de la promotion et de chaque apprenti',
+      },
+      {
+        src: `${import.meta.env.BASE_URL}images/projects/cursus-promotion.png`,
+        alt: 'Page d’une promotion : apprentis, tuteurs, entreprises et contrats',
+      },
+      {
+        src: `${import.meta.env.BASE_URL}images/projects/cursus-echanges.png`,
+        alt: 'Échanges entre le tuteur et l’apprenti, un fil par compétence',
+      },
     ],
 
     githubUrl: 'https://github.com/Remiverhaeghe/cursus',
