@@ -45,7 +45,7 @@ Les captures d'Atelier ne sont pas versionnées ici : avant chaque build, `scrip
 
 ## Déploiement
 
-Le workflow `.github/workflows/ci.yml` lance le lint, les tests et le build à chaque push et pull request. Sur `main`, il publie ensuite `dist/` sur GitHub Pages (source « GitHub Actions » dans les réglages du dépôt). Il republie aussi chaque jour à 5 h 17 UTC, pour reprendre les dernières captures d'Atelier sans attendre un push.
+Le workflow `.github/workflows/ci.yml` lance le lint, les tests et le build à chaque push et pull request. Sur `main`, il publie ensuite `dist/` sur GitHub Pages (source « GitHub Actions » dans les réglages du dépôt). Après le build, il lance le site construit dans un navigateur (`scripts/captures-site.mjs`, playwright installé hors du dépôt) et le photographie en bureau clair, bureau sombre et téléphone : une erreur de script dans la page fait échouer la CI, et les trois images sont dans l'artefact `captures-site` du passage (14 jours), pour repérer une régression de mise en page à l'œil. Il republie aussi chaque jour à 5 h 17 UTC, pour reprendre les dernières captures d'Atelier sans attendre un push.
 
 ## Documentation
 
