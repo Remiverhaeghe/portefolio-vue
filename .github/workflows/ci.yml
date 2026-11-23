@@ -40,6 +40,26 @@ jobs:
       - name: Build
         run: npm run build -- --base=/portefolio-vue/
 
+      # Le site construit est photographié (bureau clair et sombre, téléphone) : une page blanche ou une erreur
+      # de script fait échouer la CI, et les images se regardent dans l'artefact du passage
+      - name: Captures du site
+        run: |
+          npx vite preview --base=/portefolio-vue/ --port 4173 --strictPort &
+          curl --silent --fail --retry 30 --retry-connrefused --retry-delay 1 --output /dev/null http://localhost:4173/portefolio-vue/
+          mkdir -p "$RUNNER_TEMP/pw"
+          cp scripts/captures-site.mjs "$RUNNER_TEMP/pw/"
+          cd "$RUNNER_TEMP/pw"
+          npm init -y >/dev/null
+          npm install playwright@1.49.1
+          npx playwright install --with-deps chromium
+          CAPTURES_DIR="$GITHUB_WORKSPACE/captures" node captures-site.mjs
+
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: captures-site
+          path: captures
+          retention-days: 14
+
       - if: github.event_name == 'push' || github.event_name == 'schedule'
         uses: actions/upload-pages-artifact@v5
         with:
