@@ -2,6 +2,9 @@
 
 ## Non publié
 
+### secrets-audit
+- Une capture du rapport sur la carte secrets-audit, prise sur un dépôt fictif (valeurs masquées par l'outil)
+
 ### Cursus
 - Quatre captures sur la carte Cursus (progression, tableau de bord de l'école, promotion, échanges), prises sur des données fictives avec le visuel « livret d'apprentissage » du projet
 
