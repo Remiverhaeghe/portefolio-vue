@@ -156,6 +156,13 @@ export const projects = [
     githubUrl: 'https://github.com/Remiverhaeghe/secrets-audit',
 
     stack: ['Python'],
+
+    images: [
+      {
+        src: `${import.meta.env.BASE_URL}images/projects/secrets-audit-rapport.png`,
+        alt: 'Rapport de secrets-audit sur un dépôt fictif : fichier sensible suivi, jeton GitHub et mot de passe de base masqués',
+      },
+    ],
   }),
 
   new Project({
