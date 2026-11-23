@@ -2,6 +2,9 @@
 
 ## Non publié
 
+### Cursus
+- Quatre captures sur la carte Cursus (progression, tableau de bord de l'école, promotion, échanges), prises sur des données fictives avec le visuel « livret d'apprentissage » du projet
+
 ### Kalkul
 - Captures refaites avec le nouvel habillage (touches rondes, écran à sept segments) : courbes, financier, scientifique, historique
 
