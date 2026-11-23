@@ -2,6 +2,10 @@
 
 ## Non publié
 
+### Atelier en ligne
+- Bouton vers la version web d'Atelier (`https://remiverhaeghe.github.io/atelier/`), publiée par sa CI sur GitHub Pages
+- Carnet : trois croquis de plus, la pièce en L dessinée, la mezzanine en L et le suivi de l'humidité
+
 ### Projets à jour
 - Tremplin remplace l'ancien « Scraper de données » (dépôt renommé) : application mobile hors ligne avec les 944 questions livrées, univers de la piscine, révision à la voix, version web pour l'iPhone ; trois captures du tableau de bord sur des données fictives
 - Atelier : pièce dessinée d'après une forme avec murs déduits, fiche PDF de la pièce, suivi de l'humidité avant et après travaux, version web hors ligne
