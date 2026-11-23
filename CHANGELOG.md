@@ -2,6 +2,9 @@
 
 ## Non publié
 
+### Tremplin mobile
+- Deux captures de l'appli mobile sur la carte Tremplin : bilan d'une plongée et carnet de la semaine, générées par le test de captures du projet sur des données fictives
+
 ### Atelier en ligne
 - Bouton vers la version web d'Atelier (`https://remiverhaeghe.github.io/atelier/`), publiée par sa CI sur GitHub Pages
 - Carnet : trois croquis de plus, la pièce en L dessinée, la mezzanine en L et le suivi de l'humidité
