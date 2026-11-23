@@ -177,6 +177,7 @@ export const projects = [
       'Calcul financier : intérêts, mensualités et tableau d’amortissement, VAN, TRI.',
       'Tracé de fonctions avec tangente, dérivée, intégrale et aire ; matrices, systèmes d’équations, régression linéaire avec nuage de points.',
       'Onglets Programmeur (bases 2 à 16) et Chantier (béton, pente, revêtement), devises hors ligne et historique cherchable, exportable en CSV.',
+      'Habillage dessiné en Java2D, sans bibliothèque de thème : touches rondes en relief et écran à cristaux liquides aux chiffres en sept segments, inspirés des calculatrices de bureau des années 70.',
       'Tests JUnit 5 lancés avec Maven.',
     ],
 

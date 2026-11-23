@@ -2,6 +2,9 @@
 
 ## Non publié
 
+### Kalkul
+- Captures refaites avec le nouvel habillage (touches rondes, écran à sept segments) : courbes, financier, scientifique, historique
+
 ### Tremplin mobile
 - Deux captures de l'appli mobile sur la carte Tremplin : bilan d'une plongée et carnet de la semaine, générées par le test de captures du projet sur des données fictives
 
